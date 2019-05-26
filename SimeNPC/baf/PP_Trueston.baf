@@ -1,0 +1,9 @@
+IF
+IsOverMe([ANYONE])
+IsActive(Myself)
+InParty("ppsime")
+Global("PPSimeFamily","Global",0)
+THEN
+RESPONSE #100
+SetGlobal("PPSimeFamily","Global",1)
+END

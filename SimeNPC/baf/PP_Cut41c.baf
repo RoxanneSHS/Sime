@@ -1,0 +1,7 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+CreateCreatureEffect("ppsime","",[821.2804],0)
+END

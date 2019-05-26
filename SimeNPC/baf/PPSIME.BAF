@@ -1,0 +1,130 @@
+IF
+Global("AsylumPlot","GLOBAL",5)
+Global("SimeSpeak2","AR1600",0)
+See([PC])
+CombatCounter(0)
+THEN
+RESPONSE #100
+SetGlobal("SimeSpeak2","AR1600",1)
+StartDialogNoSet([PC])
+END
+
+IF
+Allegiance("ppsaem",ENEMY)
+See("ppsaem")
+THEN
+RESPONSE #100
+AttackReevaluate("ppsaem",10)
+END
+
+IF
+Global("SetMyXP","Locals",0)
+THEN
+RESPONSE #100
+SetGlobal("SetMyXP","Locals",1)
+AddXPObject(Myself,1500000)
+END
+
+IF
+Global("SimeAranRelation","Locals",0)
+InParty(Myself)
+GlobalLT("AsylumPlot","GLOBAL",20)
+OR(4)
+AreaCheck("ar1602")
+AreaCheck("ar1603")
+AreaCheck("ar1604")
+AreaCheck("ar1611")
+THEN
+RESPONSE #100
+SetGlobal("SimeAranRelation","Locals",1)
+END
+
+IF
+Global("SimeDeshRelation","Locals",0)
+OR(3)
+Global("PirateOpen","GLOBAL",1)
+Global("PirateOpen","GLOBAL",2)
+Global("PirateOpen","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobal("SimeDeshRelation","Locals",1)
+END
+
+IF
+Global("PPSimeFamily","Global",2)
+AreaCheck("ar1513")
+Delay(20)
+THEN
+RESPONSE #100
+SetGlobal("PPSimeFamily","Global",3)
+END
+
+IF
+AreaCheck("ar1102")
+!Dead("uhrang01")
+PartyHasItem("Book92")
+Global("FindMerella","Locals",0)
+THEN
+RESPONSE #100
+SetGlobal("FindMerella","Locals",1)
+END
+
+IF
+Global("PPstillKamJail","Global",5)
+!InMyArea("Maeguy01")
+THEN
+RESPONSE #100
+SetGlobal("PPstillKamJail","Global",6)
+END
+
+IF
+AreaCheck("ar1515")
+OR(3)
+Global("AsylumPlot","GLOBAL",12)
+Global("AsylumPlot","GLOBAL",13)
+Global("AsylumPlot","GLOBAL",14)
+Global("SeenJon","Locals",0)
+!See("ppireni1")
+THEN
+RESPONSE #100
+SetGlobal("SeenJon","Locals",1)
+END
+
+IF
+OR(8)
+Global("SimeAranRelation","Locals",1)
+Global("SimeDeshRelation","Locals",1)
+Global("PPSimeFamily","Global",1)
+Global("PPSimeFamily","Global",3)
+Global("PPSimeFamily","Global",5)
+Global("FindMerella","Locals",1)
+Global("PPstillKamJail","Global",6)
+Global("SeenJon","Locals",1)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogNoSet("SimeJ")
+END
+
+IF
+Global("D0Sanik","GLOBAL",0)
+Global("PPSimeSanikSave","Global",1)
+THEN
+RESPONSE #100
+SetGlobal("D0Sanik","GLOBAL",1)
+SetGlobal("Sprite_is_deadpirmur02","GLOBAL",1)
+END
+
+IF
+GlobalLT("D0Sanik","GLOBAL",3)
+GlobalGT("PPSimeSanikSave","Global",2)
+THEN
+RESPONSE #100
+SetGlobal("D0Sanik","GLOBAL",9)
+END
+

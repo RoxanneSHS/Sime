@@ -1,0 +1,23 @@
+IF
+Global("PPstillKamJail","Global",4)
+Global("PPSimePapa","Locals",0)
+THEN
+RESPONSE #100
+SetGlobal("PPSimePapa","Locals",1)
+Polymorph(SHADOW_THIEF)
+END
+
+IF
+Global("PPstillKamJail","Global",4)
+See("ppsime")
+THEN
+RESPONSE #100
+StartDialogNoSet([PC])
+END
+
+IF
+Global("PPstillKamJail","Global",5)
+THEN
+RESPONSE #100
+EscapeArea()
+END

@@ -1,0 +1,12 @@
+IF
+OR(2)
+Dead("Sendai")
+Dead("Abazigal")
+GlobalGT("ConvinceBalth","GLOBAL",2)
+Global("Ehlasex","Locals",0)
+THEN
+RESPONSE #100
+SetGlobal("Ehlasex","Locals",1)
+StartDialogNoSet("EhlastJ")
+END
+

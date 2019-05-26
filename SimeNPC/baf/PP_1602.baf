@@ -1,0 +1,41 @@
+IF
+Global("PPSimeSanikSave","Global",1)
+!InMyArea("pirmur02")
+THEN
+RESPONSE #100
+ActionOverride("PPSanik",StartDialogNoSet([PC]))
+END
+
+IF
+Global("PPSimeSanikSave","Global",3)
+!Global("D0Sanik","GLOBAL",3)
+GlobalGT("SavedClaire","GLOBAL",0)
+!Global("ClaireReunion","AR1602",1)
+!Global("ClaireReunion","AR1602",2)
+GlobalLT("AsylumPlot","GLOBAL",20)
+THEN
+RESPONSE #100
+SetGlobal("ClaireReunion","AR1602",1)
+CreateCreature("pirmur09",[446.492],0)
+CreateCreature("pirmur10",[549.462],5)
+ActionOverride("pirmur10",FaceObject("ppsanik"))
+END
+
+IF
+Global("PPSimeSanikSave","Global",5)
+THEN
+RESPONSE #100
+SetGlobal("PPSimeSanikSave","Global",6)
+EraseJournalEntry(@003)
+EraseJournalEntry(@006)
+END
+
+IF
+Dead("pirmur02")
+Dead("ppsanik")
+Global("AssassinAttacks","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("AssassinAttacks","GLOBAL",1)
+SetGlobal("SpawnAssassin","GLOBAL",2)
+END

@@ -1,0 +1,23 @@
+IF
+Global("PPDeshSime","Global",1)
+HPLT(Myself,65)
+THEN
+RESPONSE #100
+SetGlobal("PPDeshSime","Global",2)
+DisplayStringWait(Myself,@009)
+SmallWait(4)
+ReallyForceSpell(Myself,DRYAD_TELEPORT)
+END
+
+IF
+Global("PirateRefused","GLOBAL",1)
+Global("PPDeshSime2","Global",1)
+Global("PPDeshSime","Global",0)
+See("ppsime")
+GlobalLT("AsylumPlot","GLOBAL",12)
+THEN
+RESPONSE #100
+SetGlobal("PPDeshSime","Global",1)
+DisplayStringWait(Myself,@010)
+Enemy()
+END

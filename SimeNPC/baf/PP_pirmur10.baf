@@ -1,0 +1,11 @@
+IF
+OR(2)
+Global("PPSimeSanikSave","Global",3)
+Global("PPSimeSanikSave","Global",4)
+AreaCheck("AR1602")
+See([PC])
+Range(LastSeenBy(Myself),10)
+THEN
+RESPONSE #100
+StartDialogNoSet([PC])
+END

@@ -1,0 +1,12 @@
+IF
+InParty("ppsime")
+GlobalLT("PPstillKamJail","Global",4)
+!Global("FreedKamuzu","GLOBAL",0)
+!Global("AmaWaukeen","GLOBAL",1)
+!Dead("maeguy01")
+THEN
+RESPONSE #100
+SetGlobal("PPstillKamJail","Global",4)
+Wait(5)
+CreateCreature("maeguy01",[670.640],3)
+END

@@ -1,0 +1,11 @@
+IF
+Global("StartEndBios","AR6200",1)
+InParty("ppsime")
+Global("SimeBio","AR6200",0)
+THEN
+RESPONSE #100
+SetGlobal("SimeBio","AR6200",1)
+TextScreen("PPsime")
+SmallWait(1)
+Continue()
+END 

@@ -1,0 +1,23 @@
+IF
+GlobalGT("AsylumPlot","GLOBAL",12)
+!InPartyAllowDead("ppsime")
+InMyArea("ppsime")
+THEN
+RESPONSE #100
+ActionOverride("ppsime",DestroySelf())
+Continue()
+END
+
+IF
+Global("AsylumPlot","GLOBAL",5)
+InMyArea("ppsime")
+Global("ThiefGroup","GLOBAL",2)
+Global("SimeKnowSae","ar1600",0)
+THEN
+RESPONSE #100
+SetGlobal("SimeKnowSae","ar1600",1)
+CreateCreature("ppvalen",[790.2031],10)
+CreateCreature("ppparis",[912.2579],11)
+CreateCreature("ppdel",[542.2326],12)
+ActionOverride("PPsaem",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+END
