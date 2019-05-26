@@ -249,4 +249,4 @@ CHAIN
 IF~~ THEN SimeJ SeenSlayer3
 ~Of course me and the shadow thieves knew about your heritage. What we observed is called the slayer, an incarnation of Bhaal as far as I know.~
 =~You hopefully keep that under control before we all get killed.~
-=~This asylum doesn't do our minds much good, we'd better go before we all go crazy.~EXIT
+=~This asylum doesn't do our minds much good, we'd better get out fast before we all go crazy.~EXIT
