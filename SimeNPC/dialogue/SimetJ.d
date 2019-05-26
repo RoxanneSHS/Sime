@@ -11,8 +11,8 @@ CHAIN
 IF~~ THEN SimeP Brynn2
 ~Yeah, I was afraid you'd say that. It was worth a try to advance with you anyway.~
 END
-IF~AreaCheck("ar1600")~THEN REPLY ~Maybe you can find some worthy infomation for us on your own.~ + Brynn3
-IF~!AreaCheck("ar1600")~THEN REPLY  ~Maybe you can find some worthy infomation for us on your own.~ + Brynn4
+IF~AreaCheck("ar1600")~THEN REPLY ~Maybe you can find some worthy information for us on your own.~ + Brynn3
+IF~!AreaCheck("ar1600")~THEN REPLY  ~Maybe you can find some worthy information for us on your own.~ + Brynn4
 ++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
 
 CHAIN 
@@ -66,7 +66,7 @@ IF~!Dead("aran")~THEN REPLY~I wonder if Aran knows about your hidden agenda.~+ N
 CHAIN
 IF~~THEN SimeJ NotAran6
 ~I told Aran about my reason to go to Spellhold just as I am telling you now. For Aran my search for my brother assured him my full dedication to the task. I hope you see it the same. My reason to get into that place is as important to me as your own is to yourself.~
-=~Yes, it is my brother, a shadow thief who was somehow abducted by the hostile guild in Athkatla. Like others he had disappeared and not returned as a vampire like most. Arkanis Gath claimed that the trail of those missing collegues led to Spellhold.~
+=~Yes, it is my brother, a shadow thief who was somehow abducted by the hostile guild in Athkatla. Like others he had disappeared and not returned as a vampire like most. Arkanis Gath claimed that the trail of those missing colleagues led to Spellhold.~
 =~Enough for now, <CHARNAME>, business is waiting.~DO~RunAwayFrom(Player1,20)~EXIT
 
 CHAIN
@@ -122,7 +122,7 @@ IF~~THEN SimeJ Brother4
 CHAIN
 IF~~THEN SimeJ Brother5
 ~We're not orphans, our parents are somewhere but could not care for us. Our father Kamuzu worked for Mae'Var and one day disappeared. The ways of the guild were undecipherable for us children but Aran kept us as part of the "family".~
-=~When I was old enough to investigate myself, there was already tension between Aran and Mae'Var. For a while I was sent to infiltrate Mae'Var's guild but I was found out and barely eacaped their knives. My stint there was too short to find a trace of our father.~
+=~When I was old enough to investigate myself, there was already tension between Aran and Mae'Var. For a while I was sent to infiltrate Mae'Var's guild but I was found out and barely escaped their knives. My stint there was too short to find a trace of our father.~
 END
 IF~Global("FreedKamuzu","GLOBAL",1)~THEN REPLY~Kamuzu? Your father is alive, Sime. We freed him from Mae'Var's incarceration.~+ Brother6
 IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~Sime, your father is alive. We freed him from Mae'Var's incarceration and he now is part of my guild in Athkatla.~+ Brother6
@@ -182,7 +182,7 @@ IF~~THEN SimeJ Mother3
 ~She was a ranger and never felt too much at home in Athkatla. With my father missing and Aran's mage Haz laying his eyes on her it was maybe her only option to flee to the wilderness.~
 END
 IF~Dead("uhrang01")~THEN REPLY~She was the ranger protector of Imnesvale for many years. She died fighting an overpowering enemy, a true heroine.~ + Mother4
-IF~Dead("uhrang01")~THEN REPLY~Merella lives on in the memory of many who knew her. Sadly I was the witness of her death when we fought the Shade Lord who attacke Imnesvale.~+ Mother4
+IF~Dead("uhrang01")~THEN REPLY~Merella lives on in the memory of many who knew her. Sadly I was the witness of her death when we fought the Shade Lord who attacked Imnesvale.~+ Mother4
 IF~!Dead("uhrang01")~THEN REPLY~Don't give up the hope to find her someday.~ + Mother5
 ++~It's seeking a needle in a haystack even if the needle is unique. But one never knows.~+ Mother5
 
@@ -197,7 +197,7 @@ IF~~THEN SimeJ Mother5
 
 CHAIN
 IF~Global("FindMerella","Locals",1)~THEN SimeJ Shade1
-~This doesn't look too promissing. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~
+~This doesn't look too promising. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~
 =~If I don't see her alive that beast out there will pay for it, I swear.~EXIT
 
 CHAIN
@@ -231,3 +231,22 @@ END
 CHAIN
 IF~~THEN SimeJ SeenJon3
 ~I was able to find out where the victims were brought to. Only a few days later Aran ordered his guild to attack that man's hideout below Waukeen's Promenade. You know the rest of the story.~EXIT
+
+CHAIN
+IF~Global("SeenSlayer","Locals",1)~ THEN SimeJ SeenSlayer1
+~That was...impressive, uh. Do you do that often, <CHARNAME>?~
+END
+DO~SetGlobal("SeenSlayer","Locals",2)~
+++~Sure, every time we can have a night on the town.~ + SeenSlayer2
+++~I'm not quite sure myself yet what happened.~ + SeenSlayer3
+++~At least one of us keeps their humour.~ + SeenSlayer2
+
+CHAIN
+IF~~ THEN SimeJ SeenSlayer2
+~Your answer show that your mind at least is clear again.~EXTERN SimeJ SeenSlayer3
+
+CHAIN
+IF~~ THEN SimeJ SeenSlayer3
+~Of course me and the shadow thieves knew about your heritage. What we observed is called the slayer, an incarnation of Bhaal as far as I know.~
+=~You hopefully keep that under control before we all get killed.~
+=~This asylum doesn't do our minds much good, we'd better go before we all go crazy.~EXIT

@@ -91,7 +91,16 @@ SetGlobal("SeenJon","Locals",1)
 END
 
 IF
-OR(8)
+Global("AsylumPlot","GLOBAL",44)
+Global("SeenSlayer","Locals",0)
+Delay(12)
+THEN
+RESPONSE #100
+SetGlobal("SeenSlayer","Locals",1)
+END
+
+IF
+OR(9)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -100,6 +109,7 @@ Global("PPSimeFamily","Global",5)
 Global("FindMerella","Locals",1)
 Global("PPstillKamJail","Global",6)
 Global("SeenJon","Locals",1)
+Global("SeenSlayer","Locals",1)
 InParty(Myself)
 !See([ENEMY])
 See(Player1)

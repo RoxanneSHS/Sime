@@ -57,7 +57,7 @@ IF WEIGHT #-6~AreaCheck("ar1602") GlobalGT("SavedClaire","GLOBAL",0) Global("PPS
 ~Here <PRO_HESHE> comes, our saviour!~
 DO~SetGlobal("PPSimeSanikSave","Global",4)~
 ==PPSanik~<CHARNAME>, you have my thanks for saving Claire. We are leaving this island soon and will be happy together elsewhere.~
-= ~I will fulfill my part of the deal now. Here is my captain, Golin, who has some information that may be of use to you.~
+= ~I will fulfil my part of the deal now. Here is my captain, Golin, who has some information that may be of use to you.~
 ==Pirmur09~Sanik told me that you seek entry to the asylum. I know a little of the place, so perhaps I can assist you.~
 = ~Only two kinds of people get in there: Cowled Wizards and "deviants," people with special conditions of the mind.~
 END
