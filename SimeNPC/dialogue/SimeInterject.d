@@ -87,3 +87,10 @@ I_C_T PPIreni2 16 PPSimeAsyl2
 ==SimeJ IF~InParty("ppsime")~THEN~Keruak! That one is my brother.~
 ==PPIreni2 IF~InParty("ppsime")~THEN~Even better, personal knowledge of a victim makes the procedure much more effective. ~
 END
+
+I_C_T PPSaem2 4 PPSaemPoison
+==SimeJ IF~InParty("ppsime")~THEN~Last time it was poison in our food now it's poison in your ears, <CHARNAME>.~
+==PPSaem2 IF~InParty("ppsime")~THEN~Could I have succeeded without your carelessness, Sime? A bit of play with the laterns was enough to distract you.~
+==SimeJ IF~InParty("ppsime")~THEN~Play with words does not distract me this time. What is that blade that Irenicus gave you?~
+==PPSaem2 IF~InParty("ppsime")~THEN~A mere trinket compared to the service I had provided. Let's make peace, Sime, I came to talk to <CHARNAME>.~
+END
