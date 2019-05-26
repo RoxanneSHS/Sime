@@ -250,3 +250,20 @@ IF~~ THEN SimeJ SeenSlayer3
 ~Of course me and the shadow thieves knew about your heritage. What we observed is called the slayer, an incarnation of Bhaal as far as I know.~
 =~You hopefully keep that under control before we all get killed.~
 =~This asylum doesn't do our minds much good, we'd better get out fast before we all go crazy.~EXIT
+
+CHAIN
+IF~Global("SeenSlayer","Locals",3)~ THEN SimeJ SeenSlayer11
+~<CHARNAME>, isn't that anything you can control? It gets dangerous in your vicinity, I'm just glad I don't sleep next to you.~
+DO~SetGlobal("SeenSlayer","Locals",4)~
+END
+++~If I'd get my soul back I'm sure I regain the power to keep the slayer at short leash.~ + SeenSlayer12
+++~I wouldn't do anything to you if you did consider to sleep next to me.~ + SeenSlayer13
+++~This has overwhelmed me unawares. I will be prepared from now on. Getting out of here may help as well.~ + SeenSlayer12
+
+CHAIN
+IF~~ THEN SimeJ SeenSlayer12
+~I agree. We should advance to make that happen soon.~EXIT
+
+CHAIN
+IF~~ THEN SimeJ SeenSlayer13
+~I'm really not in the mood for such considerations.~EXIT
