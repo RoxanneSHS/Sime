@@ -235,8 +235,8 @@ IF~~THEN SimeJ SeenJon3
 CHAIN
 IF~Global("SeenSlayer","Locals",1)~ THEN SimeJ SeenSlayer1
 ~That was...impressive, uh. Do you do that often, <CHARNAME>?~
-END
 DO~SetGlobal("SeenSlayer","Locals",2)~
+END
 ++~Sure, every time we can have a night on the town.~ + SeenSlayer2
 ++~I'm not quite sure myself yet what happened.~ + SeenSlayer3
 ++~At least one of us keeps their humour.~ + SeenSlayer2
