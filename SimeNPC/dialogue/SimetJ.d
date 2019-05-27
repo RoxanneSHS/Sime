@@ -282,3 +282,26 @@ IF~~ THEN SimeJ SeenSlayer12
 CHAIN
 IF~~ THEN SimeJ SeenSlayer13
 ~I'm really not in the mood for such considerations.~EXIT
+
+CHAIN
+IF~Global("PPSimeMerelWitness","Global",1)~ THEN SimeJ SeenMerel1
+~Is this a curse on me and my family? Each member I find dies right before my eyes.~
+DO~SetGlobal("PPSimeMerelWitness","Global",2)~
+END
+IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~I don't believe in such a curse. I'm sure we will find your father alive.~ + SeenMerel3
+IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY~ I don't believe in such a curse. Your father is proof for that.~ + SeenMerel2
+IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~If such a curse exists we should avoid to find your father.~+ SeenMerel4
+++~I don*t believe in curses and I don't believe in destiny.~ + SeenMerel3
+
+CHAIN
+IF~~THEN SimeJ SeenMerel3
+~Neither do I. ~ EXTERN SimeJ SeenMerel2
+
+CHAIN
+IF~~THEN SimeJ SeenMerel2
+~This is just too much loss in such a short time. I feel like pushed to the limit, <CHARNAME>. I'm sorry, I know you have more than enough with your own problems.~
+=~There is no such curse. Just a series of bad coincidence. We will break this chain but we won't do it by standing here much longer.~EXIT
+
+CHAIN
+IF~~THEN SimeJ SeenMerel4
+~Do not listen to my reasoning, it's nonsense. ~ EXTERN SimeJ SeenMerel2

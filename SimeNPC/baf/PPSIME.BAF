@@ -117,7 +117,7 @@ SetGlobal("SeenSlayer","Locals",3)
 END
 
 IF
-OR(10)
+OR(11)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -128,6 +128,7 @@ Global("PPstillKamJail","Global",6)
 Global("SeenJon","Locals",1)
 Global("SeenSlayer","Locals",1)
 Global("SeenSlayer","Locals",3)
+Global("PPSimeMerelWitness","Global",1)
 InParty(Myself)
 !See([ENEMY])
 See(Player1)
