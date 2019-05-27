@@ -112,3 +112,8 @@ CHAIN
 IF~~THEN Maevar MaeSimeCon
 ~Sime, come for me, have you? I should've known. I've still those loyal to me, and they have warned me one day you'd return. We'll not lay down for you! Do as you must!~
 DO~ Enemy() ~EXIT
+
+I_C_T PPSaem2 12 PPSaemTrust
+==SimeJ IF~InParty("ppsime")~THEN~It may be unexpected advice from my side, <CHARNAME>, but this time I trust him. He can no longer gain anything by trying to betray us.~
+==PPSaem2 IF~InParty("ppsime")~THEN~The shadow thieves rule Athkatla because they choose their allies with care. Aran has taught you well, Sime.~
+END

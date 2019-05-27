@@ -284,12 +284,24 @@ IF~~ THEN SimeJ SeenSlayer13
 ~I'm really not in the mood for such considerations.~EXIT
 
 CHAIN
+IF~Global("PPSaemTrust","Global",2)~THEN SimeJ RevisitJon
+~When we first entered the asylum there was that locked area in the entry hall. It looked like the director's quarters. If Irenicus left any evidence behind, this would be the place to look for it.~
+DO~SetGlobal("PPSaemTrust","Global",3)~
+END
+++~Go back inside again, is that what you propose?~ + RevisitJon2
+++~I'm glad I never need to see that place again.~ + RevisitJon2
+
+CHAIN
+IF~~THEN SimeJ RevisitJon2
+~If we want to meet our enemy prepared with all the knowledge we can probably gain, we may find the little extra we need to succeed. ~EXIT
+
+CHAIN
 IF~Global("PPSimeMerelWitness","Global",1)~ THEN SimeJ SeenMerel1
 ~Is this a curse on me and my family? Each member I find dies right before my eyes.~
 DO~SetGlobal("PPSimeMerelWitness","Global",2)~
 END
 IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~I don't believe in such a curse. I'm sure we will find your father alive.~ + SeenMerel3
-IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY~ I don't believe in such a curse. Your father is proof for that.~ + SeenMerel2
+IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY~I don't believe in such a curse. Your father is proof for that.~ + SeenMerel2
 IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~If such a curse exists we should avoid to find your father.~+ SeenMerel4
 ++~I don*t believe in curses and I don't believe in destiny.~ + SeenMerel3
 

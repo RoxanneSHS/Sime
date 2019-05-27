@@ -117,7 +117,18 @@ SetGlobal("SeenSlayer","Locals",3)
 END
 
 IF
-OR(11)
+AreaCheck("ar1500")
+GlobalGT("AsylumPlot","GLOBAL",56)
+Global("PPSaemTrust","Global",1)
+!See("ppsaeam2")
+Global("FORCETOBPARTYMOVE4000","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("PPSaemTrust","Global",2)
+END
+
+IF
+OR(12)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -129,6 +140,7 @@ Global("SeenJon","Locals",1)
 Global("SeenSlayer","Locals",1)
 Global("SeenSlayer","Locals",3)
 Global("PPSimeMerelWitness","Global",1)
+Global("PPSaemTrust","Global",2)
 InParty(Myself)
 !See([ENEMY])
 See(Player1)
