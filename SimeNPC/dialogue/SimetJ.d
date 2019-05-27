@@ -7,6 +7,13 @@ END
 ++ ~Sime, it is better if we go on separately for now.~ + Brynn2
 ++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
 
+CHAIN
+IF~GlobalGT("AsylumPlot","GLOBAL",11) GlobalLT("PPSimeFamily","Global",6)~ THEN SimeP LeaveU1
+~That wasn't too long. Are you sure you don't want my company any longer?~
+END
+++ ~Sime, it is better if we go on separately for now.~ + LeaveU2
+++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
+
 CHAIN 
 IF~~ THEN SimeP Brynn2
 ~Yeah, I was afraid you'd say that. It was worth a try to advance with you anyway.~
@@ -22,6 +29,13 @@ IF~~ THEN SimeP Brynn3
 CHAIN
 IF~~ THEN SimeP Brynn4
 ~I will scout around a bit and meet you at the pass leading to the asylum itself. Work with haste, <CHARNAME>. Our enemies know we are here.~DO~SetDialog("ppsime") Wait(2) EscapeAreaMove("ar1600",3481,126,5)~EXIT
+
+CHAIN
+IF~~ THEN SimeP LeaveU2
+~Yeah, I was afraid you'd say that. It was worth having been with you anyway. I'm shadow thief enough to find me way out of here alone. Bye, <CHARNAME>~
+END
+++ ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~ DO~EscapeAreaDestroy(20)~EXIT
+++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
 
 
 BEGIN SimeJ
