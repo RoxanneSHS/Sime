@@ -94,3 +94,21 @@ I_C_T PPSaem2 4 PPSaemPoison
 ==SimeJ IF~InParty("ppsime")~THEN~Play with words does not distract me this time. What is that blade that Irenicus gave you?~
 ==PPSaem2 IF~InParty("ppsime")~THEN~A mere trinket compared to the service I had provided. Let's make peace, Sime, I came to talk to <CHARNAME>.~
 END
+
+CHAIN
+IF WEIGHT #-4~Global("GorchOpen","GLOBAL",1) InParty("ppsime")~THEN Gorch OpenSime
+~Aha... do come in, come in. Take a look around, if you wish. I am Gorch, the humble proprietor of this modest establishment...Wait, Sime?~
+==SIMEJ~Right. Gorch, we have no time for your games, open that door to Mae'Var and you may survive this encounter.~
+==Gorch~You! You are a fool to have returned here! Leave this place while you still possess the ability to do so!~
+==SIMEJ~This is <CHARNAME> if my own presence here is not enough to convince you.~
+==Gorch~I'm not fool enough to go down with Mae'Var, do what you will, I'll be gone, Sime.~
+DO~Unlock("DOOR01") Unlock("DOOR02") SetGlobal("GorchOpen","GLOBAL",2) Wait(2) EscapeAreaDestroy(20)~EXIT
+
+EXTEND_BOTTOM Maevar 0
+IF ~InParty("ppsime") Global("FreedKamuzu","GLOBAL",0)~THEN REPLY ~You do threaten neither me nor Sime. Release her father Kamuzu.~ + MaeSimeCon
+END
+
+CHAIN
+IF~~THEN Maevar MaeSimeCon
+~Sime, come for me, have you? I should've known. I've still those loyal to me, and they have warned me one day you'd return. We'll not lay down for you! Do as you must!~
+DO~ Enemy() ~EXIT
