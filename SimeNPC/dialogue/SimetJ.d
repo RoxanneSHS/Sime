@@ -8,7 +8,7 @@ END
 ++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
 
 CHAIN
-IF~GlobalGT("AsylumPlot","GLOBAL",11) GlobalLT("PPSimeFamily","Global",6)~ THEN SimeP LeaveU1
+IF~GlobalGT("AsylumPlot","GLOBAL",11) ~ THEN SimeP LeaveU1
 ~That wasn't too long. Are you sure you don't want my company any longer?~
 END
 ++ ~Sime, it is better if we go on separately for now.~ + LeaveU2
@@ -32,9 +32,10 @@ IF~~ THEN SimeP Brynn4
 
 CHAIN
 IF~~ THEN SimeP LeaveU2
-~Yeah, I was afraid you'd say that. It was worth having been with you anyway. I'm shadow thief enough to find me way out of here alone. Bye, <CHARNAME>~
+~Yeah, I was afraid you'd say that. It was worth having been with you anyway. I'm shadow thief enough to find me way out of here alone. Bye, <CHARNAME>.~
 END
-++ ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~ DO~EscapeAreaDestroy(20)~EXIT
+IF~OR(2) GlobalLT("PPSimeFamily","Global",6)Global("FORCETOBPARTYMOVE4000","GLOBAL",1)~THEN REPLY ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~ DO~EscapeAreaDestroy(20)~EXIT
+IF~GlobalGT("PPSimeFamily","Global",5)Global("FORCETOBPARTYMOVE4000","GLOBAL",0)~THEN REPLY ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~DO~EscapeAreaMove("ar0300",2621,1360,9)~EXIT
 ++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
 
 

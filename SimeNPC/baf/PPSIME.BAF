@@ -60,6 +60,15 @@ SetGlobal("PPSimeFamily","Global",3)
 END
 
 IF
+Global("PPSimeFamily","Global",4)
+AreaCheck("ar2202")
+Delay(20)
+THEN
+RESPONSE #100
+SetGlobal("PPSimeFamily","Global",5)
+END
+
+IF
 AreaCheck("ar1102")
 !Dead("uhrang01")
 PartyHasItem("Book92")
