@@ -54,7 +54,7 @@ INTERJECT Maeguy01 12 PPKamSime3
 ==SimeJ IF~InParty("PPSime")~THEN~We will not waste a second...here you go.~
 END Maeguy01 5
 
-I_C_T UHrang01 0 PPSimeMerelWitness
+I_C_T2 UHrang01 0 PPSimeMerelWitness
 ==SimeJ IF~InParty("PPSime")~THEN~Mother!...Rest in peace. Your fight will not be forgotten.~
 END
 
