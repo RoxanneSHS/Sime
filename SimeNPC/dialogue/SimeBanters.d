@@ -5,7 +5,7 @@ InParty(Myself)
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
 !StateCheck("ppsime",CD_STATE_NOTVALID)
 Global("SimeImoen1","Locals",0)~ THEN Bimoen2 SimeImoen1
-~He made you watch your brothers death. I mean Irenicus. He waited until he knew you were there to see it and feel the pain.~
+~He made you watch your brother's death. I mean Irenicus. He waited until he knew you were there to see it and feel the pain.~
 DO ~SetGlobal("SimeImoen1","Locals",1)~
 == SimeJ ~I would've killed everybody else for bringing this up. But you are another victim, Imoen, it's different in your case.~
 == Bimoen2 ~I know how it feels. He made me watch many things. He cut people with knifes and made me watch his killings. He has no emotions and he plays with those of other people.~
@@ -46,5 +46,5 @@ DO ~SetGlobal("Simemazzy1","Locals",1)~
 ==BMazzy~It was a short companionship only but long enough to know she was a good woman.~
 == SimeJ ~How did you meet her?~
 ==BMazzy~Lellyn, Patrick and me heard of the trouble around Umar. Your mother, the local ranger, had found evidence for the large pack of shade wolves in the Temple Ruins. Sadly none of us knew about the Shade Lord when we joined our forces to end the spook.~
-==BMazzy~I lost my friend Lellyn and my lover Patrick and you lost your mother. Your mother is a herioine who died to protect the land how it is supposed to be the duty of a ranger.~
+==BMazzy~I lost my friend Lellyn and my lover Patrick and you lost your mother. Your mother is a herioine who died to protect the land. This is supposed to be the duty of a ranger.~
 == SimeJ ~Thank you for sharing this, Mazzy. I know it hurts you as much as it hurts me.~EXIT
