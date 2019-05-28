@@ -153,3 +153,28 @@ CHAIN
 IF ~~ THEN SimeJ TreeofLife1a
 ~This IS my fight as well. Irenicus killed my brother and made me watch it. He took a bit of my soul with that. Killing him will restore me, in some way.~COPY_TRANS PLAYER1 33
 
+I_C_T Amsaemon 3 PPSimeSaemamkt
+==Amsaemon IF~InParty("ppsime")~THEN~Sime, how good you are still with <CHARNAME>. You can surely influence <PRO_HIMHER> to act reasonable.~
+==SimeJ IF~InParty("ppsime")~THEN~Me? I'm not even listening to anything you say. These fool's lives go to your account.~
+END
+
+I_C_T 25Spell 15 PPSimeFootprints
+==SimeJ IF~InParty("ppsime")~THEN~It reminds me of my childhood days in Aran's guild. Keruak or me would be used for such jobs, this theft was for a child to proof its worth.~
+==25Spell IF~InParty("ppsime")~THEN~Squip...? There's a liitle street urchin that often hangs around Hectan to fetch this or that.~
+==SimeJ IF~InParty("ppsime")~THEN~I bet he knows who did it if it wasn't himself. Let's go find him. But...please, <CHARNAME> be not to severe with him. It's not the child's fault but the circumstances, believe me.~
+END
+
+EXTEND_BOTTOM Sarthf2 2
+IF~Global("PPSimeFootprints","Global",1)InParty("ppsime")~THEN REPLY~My friend Sime here is a shadow thief. She's been a thief since she was your age.~EXTERN SimeJ Footprints1
+END
+
+CHAIN
+IF~~THEN SimeJ Footprints1
+~I know the trade, Squip. Hectan wouldn't give you anything to eat and a beating instead until you came up with the mage's book. But you can now pay him back.~
+DO~SetGlobal("PPSimeFootprints","Global",2)~
+==Sarthf2~Okay, yeah... I might know something about that.~
+==SimeJ~I have 5 gold here, I'm sure your memory is clear right now.~DO~ActionOverride("sarthf02",TakePartyGold(5))~EXTERN Sarthf2 5
+
+EXTEND_BOTTOM Sarthf1 2
+IF~GlobalGT("PPSimeFootprints","Global",0)InParty("ppsime")~THEN REPLY~My friend Sime here is a shadow thief. She's been a thief since she was a child. Do you know a boy named Squip?~ + 6
+END
