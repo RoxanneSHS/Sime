@@ -131,9 +131,25 @@ END
 
 CHAIN
 IF~~THEN SARVOLO VoloBio
-~You mean the hooded black haired beauty to your left?~
+~You mean the hooded fair haired beauty to your left?~
 ==SimeJ IF~InParty("ppsime")~THEN~That wasn't too hard to figure out, Volo?~
 == Sarvolo IF~InParty("ppsime")~THEN~"A young woman courageous enough to embark on a journey to Spellhold to save a missing brother."~
-==SimeJ IF~InParty("ppsime")~THEN~Attemmpted but failed...~
+==SimeJ IF~InParty("ppsime")~THEN~Attempted but failed...~
 == Sarvolo IF~InParty("ppsime")~THEN~It's the intent that matters here and the courage. "Sime did not tremble when she and <CHARNAME> descended into the Underdark, nor did she leave when it was time to face Irenicus at the Tree of Life."~
 ==SimeJ IF~InParty("ppsime")~THEN~Yes, yes. And I'll be there when Bhaal needs a thrashing because I've got nothing better to do...bards!~ EXTERN SARVOLO 9
+
+INTERJECT PLAYER1 33 PPSimeTreeofLife
+==PLAYER1 IF ~InParty("ppsime") ~ THEN~Sime, the young shadow thief who saw so much loss and death already at your side. Now her own fate may be at the stake.~EXTERN Player1 SimeTreeofLife
+
+CHAIN
+IF~~THEN Player1 SimeTreeofLife
+~(You turn to the young woman.)~
+END
+++ ~Sime, you have a life to return to. You don't need to go any further. This isn't your fight.~ EXTERN SimeJ TreeofLife1a
+++ ~Sime, you witnessed how powerful Irenicus is. This might not end well for most of us. There is no need to endanger yourself.~ EXTERN SimeJ TreeofLife1a
+++ ~(You nod reassuringly at her. She will come with you regardless of what you say. Her brother Keruak's blood is on Irenicus' hands.)~ EXTERN SimeJ TreeofLife1a
+
+CHAIN
+IF ~~ THEN SimeJ TreeofLife1a
+~This IS my fight as well. Irenicus killed my brother and made me watch it. He took a bit of my soul with that. Killing him will restore me, in some way.~COPY_TRANS PLAYER1 33
+
