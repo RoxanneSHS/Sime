@@ -176,5 +176,5 @@ DO~SetGlobal("PPSimeFootprints","Global",2)~
 ==SimeJ~I have 5 gold here, I'm sure your memory is clear right now.~DO~ActionOverride("sarthf02",TakePartyGold(5))~EXTERN Sarthf2 5
 
 EXTEND_BOTTOM Sarthf1 2
-IF~GlobalGT("PPSimeFootprints","Global",0)InParty("ppsime")~THEN REPLY~My friend Sime here is a shadow thief. She's been a thief since she was a child. Do you know a boy named Squip?~ + 6
+IF~Global("PPSimeFootprints","Global",1)InParty("ppsime")~THEN REPLY~My friend Sime here is a shadow thief. She's been a thief since she was a child. Do you know a boy named Squip?~ + 6
 END
