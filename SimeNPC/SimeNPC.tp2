@@ -58,6 +58,9 @@ BUT_ONLY
   
 COMPILE ~SimeNPC/baf/PPSime.baf~
 COMPILE ~SimeNPC/baf/MaeGuy01.baf~
+COMPILE ~SimeNPC/baf/PP_Eggsu.baf~
+COMPILE ~SimeNPC/baf/PP_Eggsv.baf~
+COMPILE ~SimeNPC/baf/PP_Eggsx.baf~
 EXTEND_TOP ~ar1602.bcs~ ~SimeNPC/baf/PP_1602.baf~
 EXTEND_TOP ~pirmur10.bcs~ ~SimeNPC/baf/PP_pirmur10.baf~
 EXTEND_TOP ~ar6200.bcs~ ~SimeNPC/baf/PP_6200.baf~

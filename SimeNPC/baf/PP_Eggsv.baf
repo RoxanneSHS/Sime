@@ -1,0 +1,27 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("ppsime")
+Explore()
+MoveViewPoint([1960.1458],BD_WALK)
+MoveToPoint([1960.1458])
+Wait(2)
+TakePartyItem("misc9v")
+Wait(2)
+DestroyItem("misc9v")
+Wait(2)
+ActionOverride("eggs",CreateItem("misc9v",0,0,0))
+Wait(2)
+GiveItemCreate("MISC9T","ppsime",0,0,0)
+Wait(2)
+ActionOverride("eggs",DestroyItem("misc9t"))
+Wait(2)
+SetGlobal("hostileGolems","AR2201",2)
+SetGlobal("PPSimeEggChange","Global",4)
+Wait(2)
+MoveViewObject(Player1,INSTANT)
+MoveToPoint([905.1515])
+Wait(3)
+EndCutSceneMode()
+END

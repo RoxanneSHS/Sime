@@ -12,10 +12,10 @@ Sime will find her way to Brynnlaw even if you chosoe to ally with Bodhi. Her ap
 
 Sime will save Sanik's life from Lady Galvena's assassin if she is in the party when you meet him. You will be able to rescue Claire and get Sanik's information. (Note - this is compatible with the Save Sanik component from questpack if installed.)
 
-The NPC comes with her own amount of smaller quests around her missing family members.
+The NPC comes with her own amount of smaller quests around her missing family members and some thief quests. Sime's egg theft is compatible with the Xulaye mod.
 
 Gameplay note - If you kick her out prior to entering the asylum, she will revert to her vanilla guide role in Brynnlaw but not join you again. In later parts of the game you may sent her to a place to wait for you.
 
-Compatibility - Install Sime after Alternatives and Ding0's quest pack so that the mod can recognise their presence and provide for seamless play.
+Compatibility - Install Sime after Alternatives, Ding0's quest pack and Xulaye so that the mod can recognise their presence and provide for seamless play.
 
 

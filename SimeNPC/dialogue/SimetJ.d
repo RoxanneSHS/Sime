@@ -330,3 +330,34 @@ IF~~THEN SimeJ SeenMerel2
 CHAIN
 IF~~THEN SimeJ SeenMerel4
 ~Do not listen to my reasoning, it's nonsense. ~ EXTERN SimeJ SeenMerel2
+
+CHAIN
+IF~Global("PPSimeEggChange","Global",1)~THEN SimeJ Eggchange1
+~<CHARNAME>, I can sneak into the egg chamber and do the exchange without anyone noticing. Trust your shadow thief in this.~
+DO~SetGlobal("PPSimeEggChange","Global",2)~
+END
+++~I won't risk your life here. Thanks, but I'd rather do this myself.~+ Eggchange2
+IF~!Name("ppsime",Player2) Class(Player2,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER2> is a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
+IF~!Name("ppsime",Player3) Class(Player3,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER3> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
+IF~!Name("ppsime",Player4) Class(Player4,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER4> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
+IF~!Name("ppsime",Player5) Class(Player5,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER5> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
+IF~!Name("ppsime",Player6) Class(Player6,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER6> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
+IF~PartyHasItem("misc9u")~THEN REPLY~Great idea, I want you to take the real eggs and place Phaere's fake inside.~ + EggchangeP
+IF~PartyHasItem("misc9v")~THEN REPLY~Great idea, I want you to take the real eggs and place Solaufein's fake inside.~ + EggchangeS
+IF~PartyHasItem("lk#xeggs")~THEN REPLY~Great idea, I want you to take the real eggs and place Xulaye's fake inside.~ + EggchangeX
+
+CHAIN
+IF~~THEN SimeJ Eggchange2
+~I couldn't care less.~EXIT
+
+CHAIN
+IF~~THEN SimeJ EggchangeP
+~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsu")~EXIT
+
+CHAIN
+IF~~THEN SimeJ EggchangeS
+~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsv")~EXIT
+
+CHAIN
+IF~~THEN SimeJ EggchangeX
+~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsx")~EXIT
