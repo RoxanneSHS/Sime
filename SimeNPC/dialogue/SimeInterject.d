@@ -158,6 +158,15 @@ I_C_T Amsaemon 3 PPSimeSaemamkt
 ==SimeJ IF~InParty("ppsime")~THEN~Me? I'm not even listening to anything you say. These fool's lives go to your account.~
 END
 
+EXTEND_TOP FATESP 6 #17
++ ~InParty("ppsime") !InMyArea("PPsime") Global("PPSimeSummoned","GLOBAL",0)~ + ~Bring me Sime, the shadow thief.~
+DO ~SetGlobal("PPSimeSummoned","GLOBAL",1)~ GOTO SimeGone
+END
+
+CHAIN
+IF~~THEN FATESP SimeGone
+~I cannot do as you ask, child of Bhaal. The one you seek is dead and thus forever beyond my reach. She is no longer part of your destiny.~DO~DestroySelf()~EXIT
+
 I_C_T 25Spell 15 PPSimeFootprints
 ==SimeJ IF~InParty("ppsime")~THEN~It reminds me of my childhood days in Aran's guild. Keruak or me would be used for such jobs, this theft was for a child to proof its worth.~
 ==25Spell IF~InParty("ppsime")~THEN~Squip...? There's a liitle street urchin that often hangs around Hectan to fetch this or that.~
