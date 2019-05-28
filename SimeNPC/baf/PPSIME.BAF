@@ -128,7 +128,16 @@ SetGlobal("PPSaemTrust","Global",2)
 END
 
 IF
-OR(12)
+AreaCheck("ar2300")
+Global("PPSaemTrust","Global",3)
+PartyHasItem("miscbi")
+THEN
+RESPONSE #100
+SetGlobal("PPSaemTrust","Global",4)
+END
+
+IF
+OR(13)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -141,6 +150,7 @@ Global("SeenSlayer","Locals",1)
 Global("SeenSlayer","Locals",3)
 Global("PPSimeMerelWitness","Global",1)
 Global("PPSaemTrust","Global",2)
+Global("PPSaemTrust","Global",4)
 InParty(Myself)
 !See([ENEMY])
 See(Player1)

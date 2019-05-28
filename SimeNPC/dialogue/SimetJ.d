@@ -296,6 +296,19 @@ IF~~THEN SimeJ RevisitJon2
 ~If we want to meet our enemy prepared with all the knowledge we can probably gain, we may find the little extra we need to succeed. ~EXIT
 
 CHAIN
+IF~Global("PPSaemTrust","Global",4)~THEN SimeJ SaemAgain
+~It enervates me that Saemon tricks me time and time again. Why the hell did he give you the silver blade, he knew the githyanki were after it. He could just have thrown it away.~
+DO~SetGlobal("PPSaemTrust","Global",5)~
+END
+++~He wanted to dispose of us once and for all. Just like I'll do to him if I ever meet him again.~+ SaemA2
+++~I can probably make more use of it than he can. Maybe we find the missing part and someone to forge it into a weapon.~ + SaemA2
+
+CHAIN
+IF~~ THEN SimeJ  SaemA2
+~It makes sense. Still my errors with Saemon Havarian won't leave me alone. It's unusual that someone can fool me twice - or even more. Well, most don't survive the first time anyway.~EXIT
+
+
+CHAIN
 IF~Global("PPSimeMerelWitness","Global",1)~ THEN SimeJ SeenMerel1
 ~Is this a curse on me and my family? Each member I find dies right before my eyes.~
 DO~SetGlobal("PPSimeMerelWitness","Global",2)~
