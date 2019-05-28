@@ -117,3 +117,23 @@ I_C_T PPSaem2 12 PPSaemTrust
 ==SimeJ IF~InParty("ppsime")~THEN~It may be unexpected advice from my side, <CHARNAME>, but this time I trust him. He can no longer gain anything by trying to betray us.~
 ==PPSaem2 IF~InParty("ppsime")~THEN~The shadow thieves rule Athkatla because they choose their allies with care. Aran has taught you well, Sime.~
 END
+
+I_C_T HGWra01  18 PPGorionTrap
+==HGwra01 IF~InParty("ppsime")~THEN~Sime, why do you follow <CHARNAME> still? Did not <PRO_HESHE> cause the death of your brother, mother and father already.~
+==SimeJ IF~InParty("ppsime")~THEN~What - <PRO_HESHE> had nothing to do with those killings, we were just present when it happened. And my father is alive, after all.~
+==HGwra01 IF~InParty("ppsime")~THEN~<CHARNAME> will cause your death as well, girl.~
+==SimeJ IF~InParty("ppsime")~THEN~I have no reason to believe you. I don't even have reason to believe that you're Gorion. I heard enough about that man from people who knew him to be sure you're an imposter.~
+END
+
+EXTEND_TOP SARVOLO 9
++ ~InParty("ppsime") InMyArea("ppsime") !StateCheck("ppsime",CD_STATE_NOTVALID) ~ + ~What information do you have about Sime, the shadow thief?~ + VoloBio
+END
+
+CHAIN
+IF~~THEN SARVOLO VoloBio
+~You mean the hooded black haired beauty to your left?~
+==SimeJ IF~InParty("ppsime")~THEN~That wasn't too hard to figure out, Volo?~
+== Sarvolo IF~InParty("ppsime")~THEN~"A young woman courageous enough to embark on a journey to Spellhold to save a missing brother."~
+==SimeJ IF~InParty("ppsime")~THEN~Attemmpted but failed...~
+== Sarvolo IF~InParty("ppsime")~THEN~It's the intent that matters here and the courage. "Sime did not tremble when she and <CHARNAME> descended into the Underdark, nor did she leave when it was time to face Irenicus at the Tree of Life."~
+==SimeJ IF~InParty("ppsime")~THEN~Yes, yes. And I'll be there when Bhaal needs a thrashing because I've got nothing better to do...bards!~ EXTERN SARVOLO 9
