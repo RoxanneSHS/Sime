@@ -316,7 +316,7 @@ END
 IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~I don't believe in such a curse. I'm sure we will find your father alive.~ + SeenMerel3
 IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY~I don't believe in such a curse. Your father is proof for that.~ + SeenMerel2
 IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~If such a curse exists we should avoid to find your father.~+ SeenMerel4
-++~I don*t believe in curses and I don't believe in destiny.~ + SeenMerel3
+++~I don't believe in curses and I don't believe in destiny.~ + SeenMerel3
 
 CHAIN
 IF~~THEN SimeJ SeenMerel3
