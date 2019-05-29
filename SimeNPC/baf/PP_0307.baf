@@ -1,0 +1,20 @@
+IF
+Global("PPSimepre","ar0307",0)
+Global("AsylumPlot","GLOBAL",0)
+!Dead("aran")
+THEN
+RESPONSE #100
+SetGlobal("PPSimepre","ar0307",1)
+CreateCreature("ppsime",[4600.2192],7)
+Continue()
+END
+
+IF
+Global("PPSimepre","ar0307",1)
+InMyArea("ppsime")
+!InParty("ppsime")
+GlobalGT("AsylumPlot","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("ppsime",DestroySelf())
+END

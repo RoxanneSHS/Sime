@@ -1,7 +1,7 @@
 BACKUP ~SimeNPC/backup~
 AUTHOR ~Roxanne - https://baldursextendedworld.com/Tamoko/ or roxanne@baldursextendedworld.com~
 
-VERSION ~v0.1~
+VERSION ~v0.2~
 AUTO_TRA ~SimeNPC/Tra/%s~
 
 LANGUAGE ~English~ ~english~ ~SimeNPC/Tra/Setup-Sime.tra~
@@ -72,6 +72,7 @@ EXTEND_TOP ~ar0302.bcs~ ~SimeNPC/baf/PP_0302.baf~
 EXTEND_TOP ~ar0322.bcs~ ~SimeNPC/baf/PP_0302.baf~
 EXTEND_TOP ~ar1600.bcs~ ~SimeNPC/baf/PP_1600.baf~
 EXTEND_BOTTOM ~Cut41c.bcs~ ~SimeNPC/baf/PP_Cut41c.baf~
+EXTEND_BOTTOM ~ar0307.bcs~ ~SimeNPC/baf/PP_0307.baf~
 
 COMPILE ~SimeNPC/dialogue~
 

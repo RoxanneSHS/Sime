@@ -21,3 +21,24 @@ IF~~THEN REPLY~I give you that chance but I don't need to let you join my party 
 END
 
 END
+
+CHAIN
+IF~Global("AsylumPlot","GLOBAL",0) AreaCheck("ar0307")~THEN PPSime Firstmeet1
+~They say you're trying to reach Brynnlaw and the asylum there - Spellhold.~
+END
+++~Can you do anything for me to make Aran speed up the transportation?~ + Firstmeet2
+++~That's not your business at all.~ + Firstmeet2
+++~Most people know something about me even if I never met them before.~ + Firstmeet2
+++~And who may you be?~ + Firstmeet2
+
+CHAIN
+IF~~THEN PPSime Firstmeet2
+~Excuse me, where are my manners? My name is Sime.~
+=~I have an agreement with Aran to travel to Brynnlaw as well. I've some contacts and information about the island. We'll surely be on the same ship, so I can't await for the journey to start.~
+END
+++~I'm not paying for your passage if that's what you ask me next.~ + Firstmeet3
+++~A spy for Aran I may assume. That's not what I need.~ + Firstmeet3
+
+CHAIN
+IF~~THEN PPSime Firstmeet3
+~(She lowers her voice.) I have a personal reason to get into the Asylum. You don't need to worry, I ask nothing of you but I may be helpful if we meet again.~DO~EscapeAreaDestroy(40)~EXIT
