@@ -1,12 +1,10 @@
 IF
-OR(2)
-Dead("Sendai")
-Dead("Abazigal")
-GlobalGT("ConvinceBalth","GLOBAL",2)
-Global("Ehlasex","Locals",0)
+AreaCheck("ar4500")
+Global("PPSimeFamily","Global",6)
+Global("GavePocketPlane","GLOBAL",1)
 THEN
 RESPONSE #100
-SetGlobal("Ehlasex","Locals",1)
-StartDialogNoSet("EhlastJ")
+SetGlobal("PPSimeFamily","Global",7)
+StartDialogNoSet("SimeJ")
 END
 

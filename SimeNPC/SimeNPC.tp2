@@ -57,6 +57,7 @@ WRITE_ASCII 0x94 ~ar0302~
 BUT_ONLY
   
 COMPILE ~SimeNPC/baf/PPSime.baf~
+COMPILE ~SimeNPC/baf/SimeD.baf~
 COMPILE ~SimeNPC/baf/MaeGuy01.baf~
 COMPILE ~SimeNPC/baf/PP_Eggsu.baf~
 COMPILE ~SimeNPC/baf/PP_Eggsv.baf~

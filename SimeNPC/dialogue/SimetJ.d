@@ -361,3 +361,49 @@ IF~~THEN SimeJ EggchangeS
 CHAIN
 IF~~THEN SimeJ EggchangeX
 ~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsx")~EXIT
+
+CHAIN
+IF~Global("PPSimeFamily","Global",7)~THEN SimeJ Retire1
+~<CHARNAME>, what will you do after all this Bhaal mess, do you have some idea already?~
+DO~SetGlobal("PPSimeFamily","Global",8)~
+END
+++~I'm supposed to be Bhaal then myself or do you doubt that?~ + Retire2
+++~Most likely I go back to Candlekeep. It still is the only home I ever had.~ + Retire3
+IF~OR(2) Race(Player1,ELF)Race(Player1,HALF_ELF)~THEN REPLY~I had thought of settling down at Suldanessalar. They can hardly deny me that after I saved them.~ + Retire3
+IF~!Race(Player1,ELF)!Race(Player1,HALF_ELF)~THEN REPLY~I had thought of settling down at Suldanessalar. They can hardly deny me that after I saved them.~ + Retire7
+++~See more of the Realms, I suppose. We've been some places already but even more are yet to be discovered.~ + Retire4
+
+CHAIN
+IF~~THEN SimeJ Retire2
+~How could I forget, poor incompetent mortal that I am. I was just considering my own humble options, godhood not included.~ EXIT
+
+CHAIN
+IF~~THEN SimeJ Retire3
+~Settling down sounds reasonable.~
+=~Maybe not immediately but in the long run that's what I may do as well.~
+END
+++~Do you have a place in mind where you wouuld want to live or will it be Athkatla?~+ Retire6
+++~I could imagine that some of us might stay together for more adventures. A thief and good companion like you would always be welcome.~+ Retire5
+
+CHAIN
+IF~~THEN SimeJ Retire4
+~The idea is alluring, at least while still being young.~
+=~In the long run it may be good to have some place to settle down.~
+END
+++~I could imagine that some of us might stay together for more adventures. A thief and good companion like you would always be welcome.~+ Retire5
+++~Do you have a place in mind where you wouuld want to live or will it be Athkatla?~+ Retire6
+
+CHAIN
+IF~~THEN SimeJ Retire5
+~If that was an invitation, I accept it.~
+=~At least for a while.~EXTERN SimeJ Retire6
+
+CHAIN
+IF~~THEN SimeJ Retire6
+~Athkatla or city life isn't what I have in mind. Lately I was often thinking about the life my mother had chosen. The skills I developped while trvelling with you are not unlike those that a ranger protecting a village or land requires as well.~
+=~A place like Imnesvale that's close enough to Trademeet or Athkatla while still being rural enough for my liking is not bad.~
+=~But those are just considerations. In fact, I haven't made a decision yet.~EXIT
+
+CHAIN
+IF~~THEN SimeJ Retire7
+~I wouldn't think they admit a <PRO_RACE> regardless of your merits.~ EXTERN SimeJ Retire3

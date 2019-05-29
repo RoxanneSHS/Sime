@@ -48,3 +48,33 @@ DO ~SetGlobal("Simemazzy1","Locals",1)~
 ==BMazzy~Lellyn, Patrick and me heard of the trouble around Umar. Your mother, the local ranger, had found evidence for the large pack of shade wolves in the Temple Ruins. Sadly none of us knew about the Shade Lord when we joined our forces to end the spook.~
 ==BMazzy~I lost my friend Lellyn and my lover Patrick and you lost your mother. Your mother is a herioine who died to protect the land. This is supposed to be the duty of a ranger.~
 == SimeJ ~Thank you for sharing this, Mazzy. I know it hurts you as much as it hurts me.~EXIT
+
+CHAIN
+IF ~InParty("ppsime")
+See("ppsime")
+InParty(Myself)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("ppsime",CD_STATE_NOTVALID)
+Global("PPsimePaldinBanter","Global",0)~ THEN Banomen Simepalad1
+~Which type of activities did you perform for shadow thieves, Sime?~
+DO~SetGlobal("PPsimePaldinBanter","Global",1)~
+== SimeJ~Interrogation or inquisition was not among them. We had specialists for that, often they were fallen paladins.~
+==Banomen~I doubt the truth of that!~
+== SimeJ~I was never involved in murder or slave trade. I did nothing that I haven't done as well while travelling in <CHARNAME>'s party. I did nothing that I wouldn't do again if circumstances would require it.~
+==Banomen~Not regretting anything is the typical mindset of your kind.~
+== SimeJ~I could be a paladin then, they have nothing to regret either, or do they?~EXIT
+
+CHAIN
+IF ~InParty("ppsime")
+See("ppsime")
+InParty(Myself)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("ppsime",CD_STATE_NOTVALID)
+Global("PPsimePaldinBanter","Global",0)~ THEN BKeldor Simepalad2
+~Which type of activities did you perform for shadow thieves, Sime?~
+DO~SetGlobal("PPsimePaldinBanter","Global",1)~
+== SimeJ~Interrogation or inquisition was not among them. We had specialists for that, often they were fallen paladins.~
+==BKeldor ~I doubt the truth of that!~
+== SimeJ~I was never involved in murder or slave trade. I did nothing that I haven't done as well while travelling in <CHARNAME>'s party. I did nothing that I wouldn't do again if circumstances would require it.~
+==BKeldor ~Not regretting anything is the typical mindset of your kind.~
+== SimeJ~I could be a paladin then, they have nothing to regret either, or do they?~EXIT
