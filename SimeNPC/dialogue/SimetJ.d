@@ -212,7 +212,7 @@ IF~~THEN SimeJ Mother5
 
 CHAIN
 IF~Global("FindMerella","Locals",1)~THEN SimeJ Shade1
-~This doesn't look too promising. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~
+~This doesn't look too promising. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~ DO~SetGlobal("FindMerella","Locals",2)~
 =~If I don't see her alive that beast out there will pay for it, I swear.~EXIT
 
 CHAIN
