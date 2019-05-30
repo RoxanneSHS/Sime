@@ -137,6 +137,16 @@ SetGlobal("PPSaemTrust","Global",4)
 END
 
 IF
+Global("SolaufeinJob","GLOBAL",8)
+See(Player1)
+AreaCheck("AR2200")
+Global("SimeNoKillingSola","Locals",0)
+THEN
+RESPONSE #100
+SetGlobal("SimeNoKillingSola","Locals",1)
+END
+
+IF
 AreaCheck("ar2201")
 Contains("misc9t","Eggs")
 OR(3)
@@ -151,7 +161,7 @@ SetGlobal("PPSimeEggChange","Global",1)
 END
 
 IF
-OR(14)
+OR(15)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -165,6 +175,7 @@ Global("SeenSlayer","Locals",3)
 Global("PPSimeMerelWitness","Global",1)
 Global("PPSaemTrust","Global",2)
 Global("PPSaemTrust","Global",4)
+Global("SimeNoKillingSola","Locals",1)
 Global("PPSimeEggChange","Global",1)
 InParty(Myself)
 !See([ENEMY])

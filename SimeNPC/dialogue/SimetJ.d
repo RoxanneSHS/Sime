@@ -211,6 +211,22 @@ IF~~THEN SimeJ Mother5
 ~Always it's hope and it's accepting the inevitable that kept me going. Keruak's loss was hard but I need to move on with the memory and whatever lesson it has taught me.~EXIT
 
 CHAIN
+IF~Global("SimeNoKillingSola","Locals",1)~THEN SimeJ NoKillSola1
+~As a shadow thief I love the Underdark and its intrigues. I'd love it even more if we would take our advantage and let the male live and fool Phaere with it.~
+DO~SetGlobal("SimeNoKillingSola","Locals",2)~
+=~You may think the thief guild are killers, but we always consider if it may not be the better option to let a man live and gain more. Maybe an ally we can need?~
+END
+++~I had no intention to kill him, Sime~ + NoKillSola2
+++~We can't oppose the daughter of the matron of this city, that would be suicide.~ + NoKillSola2
+++~She said she wanted his cloak. A thief may be able to get it without the man inside?~ + NoKillSola2
+
+CHAIN
+IF~~THEN SimeJ NoKillSola2
+~I suggest that we talk to Solaufein and let him know of Phaere's intention. He knows this society much better than we do and can come up with a proposal to us if he cares for his life.~EXIT
+
+
+
+CHAIN
 IF~Global("FindMerella","Locals",1)~THEN SimeJ Shade1
 ~This doesn't look too promising. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~ DO~SetGlobal("FindMerella","Locals",2)~
 =~If I don't see her alive that beast out there will pay for it, I swear.~EXIT
