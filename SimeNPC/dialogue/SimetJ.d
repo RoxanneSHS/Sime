@@ -224,7 +224,52 @@ CHAIN
 IF~~THEN SimeJ NoKillSola2
 ~I suggest that we talk to Solaufein and let him know of Phaere's intention. He knows this society much better than we do and can come up with a proposal to us if he cares for his life.~EXIT
 
+CHAIN
+IF~Global("PPWantVisitMae","Locals",1)~THEN SimeJ Aranvsmae1
+~Do you think we can find the time to take a look at Mae'Var's guild house?~
+DO~SetGlobal("PPWantVisitMae","Locals",2)~
+END
+IF~!Dead("aran")~THEN REPLY~I'd rather expected you'd like to see Aran.~ + Aranvsmae2
+IF~Dead("aran")~THEN REPLY~I'd rather expected you'd like to see your former guild. Wasn't it your home in a way?~ + Aranvsmae3
+++~You think there's a trace of your father still?~ + Aranvsmae5
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae5
 
+CHAIN
+IF~~THEN SimeJ Aranvsmae2
+~Aran will know about his thieves' fate at Brynnlaw by now. I have nothing to add to that.~
+END
+++~I thought Aran was some kind of family to you, in a way. ~+ Aranvsmae3
+++~You think there's a trace of your father still at the Mae'Var guild?~ + Aranvsmae4
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae4
+
+CHAIN
+IF~~THEN SimeJ Aranvsmae3
+~This is true and not true at the same time. Aran and the guild were Keruak's and my home and family. We had no choice in that. Parentless children like us starved in Athkatla's street as beggars or were taken and sold as slaves. We were lucky.~
+=~But it wasn't for free, <CHARNAME>. We had to work for our food and clothes just like the slaves. They taught us to steal and cheat and we had to bring our quota to the guild. In return we had shelter and protection.~
+=~Either we'd be thieves or they would kick us out and we would end as slaves. Later, they wouldn't even kick us out, at least not alive. Once a guild member knows too much there is no way to leave the guild except in a coffin.~
+=~Whatever I owed Aran, I think I paid him.~
+END
+++~You think there's a trace of your father still at the Mae'Var guild?~ + Aranvsmae4
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae4
+
+CHAIN
+IF~~THEN SimeJ Aranvsmae4
+~It's the only clue I have about my father. I don't like to waste the chance to check it while we're here in town.~EXIT
+
+CHAIN
+IF~~THEN SimeJ Aranvsmae5
+~It's the only clue I have about my father. I don't like to waste the chance to check it while we're here in town.~
+=~You may wonder why I'd not mentioned Aran's guild instead of Mae'Var's?~
+END
+++~I thought Aran was some kind of family to you, in a way. ~+ Aranvsmae6
+++~No, it's clear that Kamuzu means more to you than those thieves.~ + Aranvsmae6
+
+CHAIN
+IF~~THEN SimeJ Aranvsmae6
+~This is true and not true at the same time. Aran and the guild were Keruak's and my home and family. We had no choice in that. Parentless children like us starved in Athkatla's street as beggars or were taken and sold as slaves. We were lucky.~
+=~But it wasn't for free, <CHARNAME>. We had to work for our food and clothes just like the slaves. They taught us to steal and cheat and we had to bring our quota to the guild. In return we had shelter and protection.~
+=~Either we'd be thieves or they would kick us out and we would end as slaves. Later, they wouldn't even kick us out, at least not alive. Once a guild member knows too much there is no way to leave the guild except in a coffin.~
+=~Whatever I owed Aran and the guild, I think I paid it.~ EXIT
 
 CHAIN
 IF~Global("FindMerella","Locals",1)~THEN SimeJ Shade1

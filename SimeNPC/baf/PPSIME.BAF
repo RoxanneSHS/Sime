@@ -161,7 +161,20 @@ SetGlobal("PPSimeEggChange","Global",1)
 END
 
 IF
-OR(15)
+GlobalLT("PPstillKamJail","Global",4)
+Global("PPWantVisitMae","Locals",0)
+OR(2)
+AreaCheck("ar0300")
+AreaCheck("ar0020")
+!Dead("maeguy01")
+Delay(16)
+THEN
+RESPONSE #100
+SetGlobal("PPWantVisitMae","Locals",1)
+END
+
+IF
+OR(16)
 Global("SimeAranRelation","Locals",1)
 Global("SimeDeshRelation","Locals",1)
 Global("PPSimeFamily","Global",1)
@@ -177,6 +190,7 @@ Global("PPSaemTrust","Global",2)
 Global("PPSaemTrust","Global",4)
 Global("SimeNoKillingSola","Locals",1)
 Global("PPSimeEggChange","Global",1)
+Global("PPWantVisitMae","Locals",1)
 InParty(Myself)
 !See([ENEMY])
 See(Player1)

@@ -118,6 +118,17 @@ I_C_T PPSaem2 12 PPSaemTrust
 ==PPSaem2 IF~InParty("ppsime")~THEN~The shadow thieves rule Athkatla because they choose their allies with care. Aran has taught you well, Sime.~
 END
 
+CHAIN
+IF~!InPartySlot(LastTalkedToBy,0) Name("ppsime",LastTalkedToBy) Global("Sal_Sime","LOCALS",0)~THEN Salvanas MeetSime
+~Dangerous beauty, may I take the chance to introduce myself?~
+DO~SetGlobal("Sal_Sime","LOCALS",1)~
+==SimeJ~Are you fool to ask when you already know that I'm dangerous?~
+==Salvanas~The harder the fruit is to pluck, the sweeter the taste.~
+==SimeJ~They say blood tastes sweet. Bite your lip to try it.~
+==Salvanas~I'd rather you do that for me - let's say just nibble a bit, how is that?~
+==SimeJ~Shadow thieves don't nibble, they BITE. Hard. Few survive those encounters.~
+==Salvanas~My excuse, lady shadow thief, I didn't know you're one of the guild. Yes, I wasn't supposed to know. You weren't to tell me either. I..I already forgot, I swear.~EXIT
+
 I_C_T HGWra01  18 PPGorionTrap
 ==HGwra01 IF~InParty("ppsime")~THEN~Sime, why do you follow <CHARNAME> still? Did not <PRO_HESHE> cause the death of your brother, mother and father already.~
 ==SimeJ IF~InParty("ppsime")~THEN~What - <PRO_HESHE> had nothing to do with those killings, we were just present when it happened. And my father is alive, after all.~
