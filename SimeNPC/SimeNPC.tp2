@@ -74,6 +74,10 @@ EXTEND_TOP ~ar1600.bcs~ ~SimeNPC/baf/PP_1600.baf~
 EXTEND_BOTTOM ~Cut41c.bcs~ ~SimeNPC/baf/PP_Cut41c.baf~
 EXTEND_BOTTOM ~ar0307.bcs~ ~SimeNPC/baf/PP_0307.baf~
 
+ACTION_IF FILE_EXISTS_IN_GAME ~ts0322.bcs~ THEN BEGIN
+EXTEND_TOP ~ts0322.bcs~ ~SimeNPC/baf/PP_0302.baf~
+END
+
 COMPILE ~SimeNPC/dialogue~
 
 APPEND ~pdialog.2da~
