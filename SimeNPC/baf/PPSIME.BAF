@@ -120,7 +120,7 @@ IF
 AreaCheck("ar1500")
 GlobalGT("AsylumPlot","GLOBAL",56)
 Global("PPSaemTrust","Global",1)
-!See("ppsaeam2")
+!See("ppsaem2")
 Global("FORCETOBPARTYMOVE4000","GLOBAL",0)
 THEN
 RESPONSE #100
