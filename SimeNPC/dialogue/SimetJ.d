@@ -2,469 +2,469 @@ BEGIN SimeP
 
 CHAIN
 IF~GlobalLT("AsylumPlot","GLOBAL",12)~ THEN SimeP Brynn1
-~That was short. Are you sure you don't want my company any longer?~
+@0
 END
-++ ~Sime, it is better if we go on separately for now.~ + Brynn2
-++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
+++ @1 + Brynn2
+++ @2 DO~JoinParty()~EXIT
 
 CHAIN
 IF~GlobalGT("AsylumPlot","GLOBAL",11) ~ THEN SimeP LeaveU1
-~That wasn't too long. Are you sure you don't want my company any longer?~
+@3
 END
-++ ~Sime, it is better if we go on separately for now.~ + LeaveU2
-++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
+++ @1 + LeaveU2
+++ @2 DO~JoinParty()~EXIT
 
 CHAIN 
 IF~~ THEN SimeP Brynn2
-~Yeah, I was afraid you'd say that. It was worth a try to advance with you anyway.~
+@4
 END
-IF~AreaCheck("ar1600")~THEN REPLY ~Maybe you can find some worthy information for us on your own.~ + Brynn3
-IF~!AreaCheck("ar1600")~THEN REPLY  ~Maybe you can find some worthy information for us on your own.~ + Brynn4
-++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
+IF~AreaCheck("ar1600")~THEN REPLY @5 + Brynn3
+IF~!AreaCheck("ar1600")~THEN REPLY  @5 + Brynn4
+++ @2 DO~JoinParty()~EXIT
 
 CHAIN 
 IF~~ THEN SimeP Brynn3
-~I will scout around a bit and meet you at the pass leading to the asylum itself. Work with haste, <CHARNAME>. Our enemies know we are here.~DO~SetDialog("ppsime") Wait(2) ForceSpellPoint([3481.126],WIZARD_DIMENSION_DOOR)~EXIT
+@6DO~SetDialog("ppsime") Wait(2) ForceSpellPoint([3481.126],WIZARD_DIMENSION_DOOR)~EXIT
 
 CHAIN
 IF~~ THEN SimeP Brynn4
-~I will scout around a bit and meet you at the pass leading to the asylum itself. Work with haste, <CHARNAME>. Our enemies know we are here.~DO~SetDialog("ppsime") Wait(2) EscapeAreaMove("ar1600",3481,126,5)~EXIT
+@6DO~SetDialog("ppsime") Wait(2) EscapeAreaMove("ar1600",3481,126,5)~EXIT
 
 CHAIN
 IF~~ THEN SimeP LeaveU2
-~Yeah, I was afraid you'd say that. It was worth having been with you anyway. I'm shadow thief enough to find me way out of here alone. Bye, <CHARNAME>.~
+@7
 END
-IF~OR(2) GlobalLT("PPSimeFamily","Global",6)Global("FORCETOBPARTYMOVE4000","GLOBAL",1)~THEN REPLY ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~ DO~EscapeAreaDestroy(20)~EXIT
-IF~GlobalGT("PPSimeFamily","Global",5)Global("FORCETOBPARTYMOVE4000","GLOBAL",0)~THEN REPLY ~I'll keep my eyes open for you should I return to Athkatla. Maybe we meet again.~DO~EscapeAreaMove("ar0300",2621,1360,9)~EXIT
-++ ~Oops! It was a mistake, Sime, stay with me.~ DO~JoinParty()~EXIT
+IF~OR(2) GlobalLT("PPSimeFamily","Global",6)Global("FORCETOBPARTYMOVE4000","GLOBAL",1)~THEN REPLY @8 DO~EscapeAreaDestroy(20)~EXIT
+IF~GlobalGT("PPSimeFamily","Global",5)Global("FORCETOBPARTYMOVE4000","GLOBAL",0)~THEN REPLY @8DO~EscapeAreaMove("ar0300",2621,1360,9)~EXIT
+++ @2 DO~JoinParty()~EXIT
 
 
 BEGIN SimeJ
 
 CHAIN 
 IF~Global("SimeAranRelation","Locals",1)~ THEN SimeJ NotAran1
-~<CHARNAME>, there is something I need to clarify before we move on - urgently.~
+@9
 DO~SetGlobal("SimeAranRelation","Locals",2)~
 END
-++~It best be really important, Sime, we have not much time.~ + NotAran3
-++~It better be the truth, lady shadow thief.~ + NotAran3
-++~If I say "not now" I mean what I say.~ + NotAran2
+++@10 + NotAran3
+++@11 + NotAran3
+++@12 + NotAran2
 
 CHAIN
 IF~~THEN SimeJ NotAran2
-~If I say "I leave now" I mean what I say.~DO~EscapeAreaDestroy(12)~EXIT
+@13DO~EscapeAreaDestroy(12)~EXIT
 
 CHAIN
 IF~~THEN SimeJ NotAran3
-~It is important and it is true and it is necessary that you know about it.~
-=~Aran was aware that Saemon was secretly dealing with all parties around Athkatla that had an interest in bringing you to Brynnlaw, even if their reasons are quite different ones. His preference was that you take his offer but in case you wouldn't he'd still have his observer on the island.~
+@14
+=@15
 END
-++~That observer would be you, of course.~ + NotAran5
-++~He knew about those other offers?~ + NotAran4
+++@16 + NotAran5
+++@17 + NotAran4
 
 CHAIN
 IF~~THEN SimeJ NotAran4
-~We knew no details but we knew there were others interested and we knew that they all would need Saemon in the end.~ EXTERN SimeJ NotAran5
+@18 EXTERN SimeJ NotAran5
 
 CHAIN
 IF~~THEN SimeJ NotAran5
-~I was volunteering to do the task where others were just horrified. I must get into Spellhold, <CHARNAME>. I must.~
-=~I made sure that I would be on board of the Galante come what may. Saemon's crew is as flexible in their business as is their captain. His first mate Carras had an open ear for me...~
-==SimeJ IF~Dead("aran")~THEN~Aran's unexpected end does not change this for me. ~
-==SimeJ~I must get into Spellhold to know what happened to the missing shadow thieves that were not turned into vampires by Bodhi.~
+@19
+=@20
+==SimeJ IF~Dead("aran")~THEN@21
+==SimeJ@22
 END
-++~This sounds like a personal quest rather than a guild mission.~ + NotAran6
-++~Experience tells me that there is a specific thief that interests you.~ + NotAran6
-IF~Dead("aran")~THEN REPLY~Aran was just a means to you, just like I am now.~+ NotAran6
-IF~!Dead("aran")~THEN REPLY~I wonder if Aran knows about your hidden agenda.~+ NotAran6
+++@23 + NotAran6
+++@24 + NotAran6
+IF~Dead("aran")~THEN REPLY@25+ NotAran6
+IF~!Dead("aran")~THEN REPLY@26+ NotAran6
 
 CHAIN
 IF~~THEN SimeJ NotAran6
-~I told Aran about my reason to go to Spellhold just as I am telling you now. For Aran my search for my brother assured him my full dedication to the task. I hope you see it the same. My reason to get into that place is as important to me as your own is to yourself.~
-=~Yes, it is my brother, a shadow thief who was somehow abducted by the hostile guild in Athkatla. Like others he had disappeared and not returned as a vampire like most. Arkanis Gath claimed that the trail of those missing colleagues led to Spellhold.~
-=~Enough for now, <CHARNAME>, business is waiting.~DO~RunAwayFrom(Player1,20)~EXIT
+@27
+=@28
+=@29DO~RunAwayFrom(Player1,20)~EXIT
 
 CHAIN
 IF~Global("SimeDeshRelation","Locals",1)~ THEN SimeJ Deshwarn1
-~Psst, <CHARNAME>, before you go inside to meet Desharik, there is one thing you need to know.~
+@30
 DO~SetGlobal("SimeDeshRelation","Locals",2)~
 END
-++~Does he know you?~ + Deshwarn2
-++~Do you know him?~ + Deshwarn2
-++~I have to risk it, but I'd listen to your warning?~ + Deshwarn2
-++~Regardless of what you think - there is no other way.~ + Deshwarn3
+++@31 + Deshwarn2
+++@32 + Deshwarn2
+++@33 + Deshwarn2
+++@34 + Deshwarn3
 
 CHAIN
 IF~~ THEN SimeJ Deshwarn2
-~He knows who I am and I'm sure his men all over town have seen us together and told him. Little happens on this island that he doesn't know.~
-=~I see little chance to hoodwink the pirate king when he detects my presence.~
+@35
+=@36
 END
-++~Pull that hood a little deeper and stay in the back. Let me do the talking~ + Deshwarn3
-++~I'll go inside without you, I have to risk it for Imoen.~ + Deshwarn3
+++@37 + Deshwarn3
+++@38 + Deshwarn3
 
 CHAIN
 IF~~ THEN SimeJ Deshwarn3
-~(This will not end well.)~EXIT
+@39EXIT
 
 CHAIN
 IF~Global("PPSimeFamily","Global",1)~THEN SimeJ Brother1
-~My brother Keruak was the reason why I joined the shadow thieves.~
+@40
 DO~SetGlobal("PPSimeFamily","Global",2)~
 END
-++~Your brother who maybe waits ahead in the Asylum.~ + Brother2
-++~It's no wonder you think of him now, it's the same for me with Imoen.~ + Brother2
-++~Keruak and Imoen wait ahead, we should make haste to free them.~ + Brother2
+++@41 + Brother2
+++@42 + Brother2
+++@43 + Brother2
 
 CHAIN
 IF~~THEN SimeJ Brother2
-~You are right, <CHARNAME>. A minute or two to talk about them may not be wasted. I'm sure our approach to the asylum is monitored from inside and they will not act before we arrive.If they had wanted to act they would have done ever since we arrived. No, they wait for us, they want us inside where they think they have full control.~
+@44
 END
-++~You're probably right. You know all about Imoen but I know nothing about Keruak.~+ Brother3
-++~And that's why I want to act now and not talk.~+ Brother4
+++@45+ Brother3
+++@46+ Brother4
 
 CHAIN
 IF~~THEN SimeJ Brother3
-~It's almost the same with us as it's with you two. Only we are really siblings. But all our lives it's been me and him, all we ever had was us. It made us strong and helped us survive.~
+@47
 END
-++~You are orphans as well?~ + Brother5
-++~What about your parents?~ + Brother5
-++~How funny - everybody in the Realms shares the same sad tale.~+ Brother4
+++@48 + Brother5
+++@49 + Brother5
+++@50+ Brother4
 
 CHAIN
 IF~~THEN SimeJ Brother4
-~I had expected a little more sensitiveness from you. Maybe you lost it on the road. I never lost mine not even in Aran's guild. Were it not for Keruak inside I'd be leaving you already.~ DO~SetGlobal("PPSimeFamily","Global",55)~EXIT
+@51 DO~SetGlobal("PPSimeFamily","Global",55)~EXIT
 
 CHAIN
 IF~~THEN SimeJ Brother5
-~We're not orphans, our parents are somewhere but could not care for us. Our father Kamuzu worked for Mae'Var and one day disappeared. The ways of the guild were undecipherable for us children but Aran kept us as part of the "family".~
-=~When I was old enough to investigate myself, there was already tension between Aran and Mae'Var. For a while I was sent to infiltrate Mae'Var's guild but I was found out and barely escaped their knives. My stint there was too short to find a trace of our father.~
+@52
+=@53
 END
-IF~Global("FreedKamuzu","GLOBAL",1)~THEN REPLY~Kamuzu? Your father is alive, Sime. We freed him from Mae'Var's incarceration.~+ Brother6
-IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~Sime, your father is alive. We freed him from Mae'Var's incarceration and he now is part of my guild in Athkatla.~+ Brother6
-IF~!Global("TalkedToKamuza","GLOBAL",0)~THEN REPLY~We met a man Kamuzu who was imprisoned by Mae'Var. I don't know what became of him. At least I can witness he was still alive.~+ Brother6
-IF~Global("TalkedToKamuza","GLOBAL",0)~THEN REPLY~Chances are that he is still somewhere in Mae'Var's dungeons.~DO~SetGlobal("PPstillKamJail","Global",1)~+ Brother7
+IF~Global("FreedKamuzu","GLOBAL",1)~THEN REPLY@54+ Brother6
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY@55+ Brother6
+IF~!Global("TalkedToKamuza","GLOBAL",0)~THEN REPLY@56+ Brother6
+IF~Global("TalkedToKamuza","GLOBAL",0)~THEN REPLY@57DO~SetGlobal("PPstillKamJail","Global",1)~+ Brother7
 
 CHAIN
 IF~~THEN SimeJ Brother6
-~He is alive! And Keruak and me always believed he was! All I can ask for is to get a chance and seek for him once we make it back to Athkatla.~
+@58
 END
-++~I will be glad to help you with that.~+ Brother8
-++~Right, now let us do our current task first.~ + Brother8
-++~What about your mother?~ + Brother8
+++@59+ Brother8
+++@60 + Brother8
+++@61 + Brother8
 
 CHAIN
 IF~~THEN SimeJ Brother7
-~This is my hope as well. And Keruak and me always believed he was!~
+@62
 END
-++~I will be glad to help you with that.~+ Brother8
-++~Right, now let us do our current task first~ + Brother8
-++~What about your mother?~ + Brother8
+++@59+ Brother8
+++@63 + Brother8
+++@61 + Brother8
 
 CHAIN
 IF~~THEN SimeJ Brother8
-~Let us talk about my mother another time. Imoen and Keruak shall be freed now.~EXIT
+@64EXIT
 
 CHAIN
 IF~Global("PPSimeFamily","Global",3)~THEN SimeJ Keruak1
-~I try to solace myself with the thought that there was no way for us to save my brother Keruak. That bastard Irenicus waited until we were there to make each of us suffer the most.~
+@65
 DO~SetGlobal("PPSimeFamily","Global",4)~
 END
-++~Keruak lost his life the moment he was caught. His killing was just a matter of Irenicus' whim. He plays with souls and lives like seeing himself as a god already.~ + Keruak2
-++~He will pay for everything, Sime. We are a strong union against him.~ + Keruak2
+++@66 + Keruak2
+++@67 + Keruak2
 
 CHAIN
 IF~~THEN SimeJ Keruak2
-~Most gods are more merciful than Irenicus.~
-=~He may dream of having the power of one but he lacks any justification for potential followers except Bodhi. Gods without followers fade quickly.~EXIT
+@68
+=@69EXIT
 
 CHAIN
 IF~Global("PPSimeFamily","Global",5)~THEN SimeJ Mother1
-~My mother's name...our mother...Keruak's mother...~
+@70
 DO~SetGlobal("PPSimeFamily","Global",6)~
-=~(She steadies herself again.) My mother's name is Merella. She fled from Athkatla when she heard about our father's disappearance. She was sure that Aran would protect us children but he would not protect her.~
+=@71
 END
-IF~Dead("uhrang01")~THEN REPLY~Merella - like the ranger protector of Imnesvale?~ + Mother3
-IF~Dead("uhrang01")~THEN REPLY~Merella...that is a frequent name in Amn, isn't it? ~+ Mother2
-++~...I, I see...~ + Mother2
-IF~!Dead("uhrang01")~THEN REPLY~This is a unique name. Maybe we come across some hint during our travels.~ + Mother3
+IF~Dead("uhrang01")~THEN REPLY@72 + Mother3
+IF~Dead("uhrang01")~THEN REPLY@73+ Mother2
+++@74 + Mother2
+IF~!Dead("uhrang01")~THEN REPLY@75 + Mother3
 
 CHAIN
 IF~~THEN SimeJ Mother2
-~<CHARNAME>? Merella is a very unique name. I know you well enough. You know something about her.~EXTERN SimeJ Mother3
+@76EXTERN SimeJ Mother3
 
 CHAIN
 IF~~THEN SimeJ Mother3
-~She was a ranger and never felt too much at home in Athkatla. With my father missing and Aran's mage Haz laying his eyes on her it was maybe her only option to flee to the wilderness.~
+@77
 END
-IF~Dead("uhrang01")~THEN REPLY~She was the ranger protector of Imnesvale for many years. She died fighting an overpowering enemy, a true heroine.~ + Mother4
-IF~Dead("uhrang01")~THEN REPLY~Merella lives on in the memory of many who knew her. Sadly I was the witness of her death when we fought the Shade Lord who attacked Imnesvale.~+ Mother4
-IF~!Dead("uhrang01")~THEN REPLY~Don't give up the hope to find her someday.~ + Mother5
-++~It's seeking a needle in a haystack even if the needle is unique. But one never knows.~+ Mother5
+IF~Dead("uhrang01")~THEN REPLY@78 + Mother4
+IF~Dead("uhrang01")~THEN REPLY@79+ Mother4
+IF~!Dead("uhrang01")~THEN REPLY@80 + Mother5
+++@81+ Mother5
 
 CHAIN
 IF~~THEN SimeJ Mother4
-~Dead...Please tell me everything you know. I want to treasure her memory in my heart. She did for others what she was unable to do for Keruak and me. I feel no blame for her, I feel respect.~
-=~(She listens attentively as you tell her all the details about the Umar and Shadow Lord adventure.)~EXIT
+@82
+=@83EXIT
 
 CHAIN
 IF~~THEN SimeJ Mother5
-~Always it's hope and it's accepting the inevitable that kept me going. Keruak's loss was hard but I need to move on with the memory and whatever lesson it has taught me.~EXIT
+@84EXIT
 
 CHAIN
 IF~Global("SimeNoKillingSola","Locals",1)~THEN SimeJ NoKillSola1
-~As a shadow thief I love the Underdark and its intrigues. I'd love it even more if we would take our advantage and let the male live and fool Phaere with it.~
+@85
 DO~SetGlobal("SimeNoKillingSola","Locals",2)~
-=~You may think the thief guild are killers, but we always consider if it may not be the better option to let a man live and gain more. Maybe an ally we can need?~
+=@86
 END
-++~I had no intention to kill him, Sime~ + NoKillSola2
-++~We can't oppose the daughter of the matron of this city, that would be suicide.~ + NoKillSola2
-++~She said she wanted his cloak. A thief may be able to get it without the man inside?~ + NoKillSola2
+++@87 + NoKillSola2
+++@88 + NoKillSola2
+++@89 + NoKillSola2
 
 CHAIN
 IF~~THEN SimeJ NoKillSola2
-~I suggest that we talk to Solaufein and let him know of Phaere's intention. He knows this society much better than we do and can come up with a proposal to us if he cares for his life.~EXIT
+@90EXIT
 
 CHAIN
 IF~Global("PPWantVisitMae","Locals",1)~THEN SimeJ Aranvsmae1
-~Do you think we can find the time to take a look at Mae'Var's guild house?~
+@91
 DO~SetGlobal("PPWantVisitMae","Locals",2)~
 END
-IF~!Dead("aran")~THEN REPLY~I'd rather expected you'd like to see Aran.~ + Aranvsmae2
-IF~Dead("aran")~THEN REPLY~I'd rather expected you'd like to see your former guild. Wasn't it your home in a way?~ + Aranvsmae3
-++~You think there's a trace of your father still?~ + Aranvsmae5
-IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae5
+IF~!Dead("aran")~THEN REPLY@92 + Aranvsmae2
+IF~Dead("aran")~THEN REPLY@93 + Aranvsmae3
+++@94 + Aranvsmae5
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY@95 + Aranvsmae5
 
 CHAIN
 IF~~THEN SimeJ Aranvsmae2
-~Aran will know about his thieves' fate at Brynnlaw by now. I have nothing to add to that.~
+@96
 END
-++~I thought Aran was some kind of family to you, in a way. ~+ Aranvsmae3
-++~You think there's a trace of your father still at the Mae'Var guild?~ + Aranvsmae4
-IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae4
+++@97+ Aranvsmae3
+++@98 + Aranvsmae4
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY@95 + Aranvsmae4
 
 CHAIN
 IF~~THEN SimeJ Aranvsmae3
-~This is true and not true at the same time. Aran and the guild were Keruak's and my home and family. We had no choice in that. Parentless children like us starved in Athkatla's street as beggars or were taken and sold as slaves. We were lucky.~
-=~But it wasn't for free, <CHARNAME>. We had to work for our food and clothes just like the slaves. They taught us to steal and cheat and we had to bring our quota to the guild. In return we had shelter and protection.~
-=~Either we'd be thieves or they would kick us out and we would end as slaves. Later, they wouldn't even kick us out, at least not alive. Once a guild member knows too much there is no way to leave the guild except in a coffin.~
-=~Whatever I owed Aran, I think I paid him.~
+@99
+=@100
+=@101
+=@102
 END
-++~You think there's a trace of your father still at the Mae'Var guild?~ + Aranvsmae4
-IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY~You want to meet Kamuzu, I understand.~ + Aranvsmae4
+++@98 + Aranvsmae4
+IF~Global("FreedKamuzu","GLOBAL",2)~THEN REPLY@95 + Aranvsmae4
 
 CHAIN
 IF~~THEN SimeJ Aranvsmae4
-~It's the only clue I have about my father. I don't like to waste the chance to check it while we're here in town.~EXIT
+@103EXIT
 
 CHAIN
 IF~~THEN SimeJ Aranvsmae5
-~It's the only clue I have about my father. I don't like to waste the chance to check it while we're here in town.~
-=~You may wonder why I'd not mentioned Aran's guild instead of Mae'Var's?~
+@103
+=@104
 END
-++~I thought Aran was some kind of family to you, in a way. ~+ Aranvsmae6
-++~No, it's clear that Kamuzu means more to you than those thieves.~ + Aranvsmae6
+++@97+ Aranvsmae6
+++@105 + Aranvsmae6
 
 CHAIN
 IF~~THEN SimeJ Aranvsmae6
-~This is true and not true at the same time. Aran and the guild were Keruak's and my home and family. We had no choice in that. Parentless children like us starved in Athkatla's street as beggars or were taken and sold as slaves. We were lucky.~
-=~But it wasn't for free, <CHARNAME>. We had to work for our food and clothes just like the slaves. They taught us to steal and cheat and we had to bring our quota to the guild. In return we had shelter and protection.~
-=~Either we'd be thieves or they would kick us out and we would end as slaves. Later, they wouldn't even kick us out, at least not alive. Once a guild member knows too much there is no way to leave the guild except in a coffin.~
-=~Whatever I owed Aran and the guild, I think I paid it.~ EXIT
+@99
+=@100
+=@101
+=@106 EXIT
 
 CHAIN
 IF~Global("FindMerella","Locals",1)~THEN SimeJ Shade1
-~This doesn't look too promising. We must make haste to find my mother as I'm afraid her chances against whatever is out there are pretty thin being on her own.~ DO~SetGlobal("FindMerella","Locals",2)~
-=~If I don't see her alive that beast out there will pay for it, I swear.~EXIT
+@107 DO~SetGlobal("FindMerella","Locals",2)~
+=@108EXIT
 
 CHAIN
 IF~Global("PPstillKamJail","Global",6)~ THEN SimeJ Reuniondad
-~Thank you for giving me that moment, <CHARNAME>. I hope I can return the favour one day.~
+@109
 DO~SetGlobal("PPstillKamJail","Global",7)~
 END
-++~At least one family member you have recovered, it's joy and a bit of sadness for those missing.~ + Reuniondad2
-++~You already have done so much for me in our time together, I'm happy I could do something for you after all.~+ Reuniondad2
+++@110 + Reuniondad2
+++@111+ Reuniondad2
 
 CHAIN
 IF~~ THEN SimeJ Reuniondad2
-~Well spoken, I'm ready to move on. My father has now a room upstairs and I can see him each time we pass through here.~EXIT
+@112EXIT
 
 CHAIN
 IF~Global("SeenJon","Locals",1)~THEN SimeJ SeenJon1
-~<CHARNAME>, this man is not who he pretends to be. I've seen him before even if I don't know his name. He's not a cowled wizard, that much is sure.~
+@113
 DO~SetGlobal("SeenJon","Locals",2)~
 END
-++~What do you know about him?~ + SeenJon2
-++~Where dis you see him before?~ + SeenJon2
-++~I suspect the same. This may be precisely the man we are hunting, Irenicus.~ + SeenJon2
+++@114 + SeenJon2
+++@115 + SeenJon2
+++@116 + SeenJon2
 
 CHAIN
 IF~~THEN SimeJ SeenJon2
-~I saw him while I was at Mae'Var's guild. He wanted a job done by the guild, a kidnapping. He was after a group of adventures who had been forced to leave Baldur's Gate due to his machinations. He not only paid Mae'Var a large sum for the service but also guaranteed his men to be excluded from the vampire attacks on shadow thieves.~
+@117
 END
-++~Oh, I know better than anyone who those kidnapped people were.~ + SeenJon3
-++~This really explains a lot.~ + SeenJon3
+++@118 + SeenJon3
+++@119 + SeenJon3
 
 CHAIN
 IF~~THEN SimeJ SeenJon3
-~I was able to find out where the victims were brought to. Only a few days later Aran ordered his guild to attack that man's hideout below Waukeen's Promenade. You know the rest of the story.~EXIT
+@120EXIT
 
 CHAIN
 IF~Global("SeenSlayer","Locals",1)~ THEN SimeJ SeenSlayer1
-~That was...impressive, uh. Do you do that often, <CHARNAME>?~
+@121
 DO~SetGlobal("SeenSlayer","Locals",2)~
 END
-++~Sure, every time we can have a night on the town.~ + SeenSlayer2
-++~I'm not quite sure myself yet what happened.~ + SeenSlayer3
-++~At least one of us keeps their humour.~ + SeenSlayer2
+++@122 + SeenSlayer2
+++@123 + SeenSlayer3
+++@124 + SeenSlayer2
 
 CHAIN
 IF~~ THEN SimeJ SeenSlayer2
-~Your answer show that your mind at least is clear again.~EXTERN SimeJ SeenSlayer3
+@125EXTERN SimeJ SeenSlayer3
 
 CHAIN
 IF~~ THEN SimeJ SeenSlayer3
-~Of course me and the shadow thieves knew about your heritage. What we observed is called the slayer, an incarnation of Bhaal as far as I know.~
-=~You hopefully keep that under control before we all get killed.~
-=~This asylum doesn't do our minds much good, we'd better get out fast before we all go crazy.~EXIT
+@126
+=@127
+=@128EXIT
 
 CHAIN
 IF~Global("SeenSlayer","Locals",3)~ THEN SimeJ SeenSlayer11
-~<CHARNAME>, isn't that anything you can control? It gets dangerous in your vicinity, I'm just glad I don't sleep next to you.~
+@129
 DO~SetGlobal("SeenSlayer","Locals",4)~
 END
-++~If I'd get my soul back I'm sure I regain the power to keep the slayer at short leash.~ + SeenSlayer12
-++~I wouldn't do anything to you if you did consider to sleep next to me.~ + SeenSlayer13
-++~This has overwhelmed me unawares. I will be prepared from now on. Getting out of here may help as well.~ + SeenSlayer12
+++@130 + SeenSlayer12
+++@131 + SeenSlayer13
+++@132 + SeenSlayer12
 
 CHAIN
 IF~~ THEN SimeJ SeenSlayer12
-~I agree. We should advance to make that happen soon.~EXIT
+@133EXIT
 
 CHAIN
 IF~~ THEN SimeJ SeenSlayer13
-~I'm really not in the mood for such considerations.~EXIT
+@134EXIT
 
 CHAIN
 IF~Global("PPSaemTrust","Global",2)~THEN SimeJ RevisitJon
-~When we first entered the asylum there was that locked area in the entry hall. It looked like the director's quarters. If Irenicus left any evidence behind, this would be the place to look for it.~
+@135
 DO~SetGlobal("PPSaemTrust","Global",3)~
 END
-++~Go back inside again, is that what you propose?~ + RevisitJon2
-++~I'm glad I never need to see that place again.~ + RevisitJon2
+++@136 + RevisitJon2
+++@137 + RevisitJon2
 
 CHAIN
 IF~~THEN SimeJ RevisitJon2
-~If we want to meet our enemy prepared with all the knowledge we can probably gain, we may find the little extra we need to succeed. ~EXIT
+@138EXIT
 
 CHAIN
 IF~Global("PPSaemTrust","Global",4)~THEN SimeJ SaemAgain
-~It enervates me that Saemon tricks me time and time again. Why the hell did he give you the silver blade, he knew the githyanki were after it. He could just have thrown it away.~
+@139
 DO~SetGlobal("PPSaemTrust","Global",5)~
 END
-++~He wanted to dispose of us once and for all. Just like I'll do to him if I ever meet him again.~+ SaemA2
-++~I can probably make more use of it than he can. Maybe we find the missing part and someone to forge it into a weapon.~ + SaemA2
+++@140+ SaemA2
+++@141 + SaemA2
 
 CHAIN
 IF~~ THEN SimeJ  SaemA2
-~It makes sense. Still my errors with Saemon Havarian won't leave me alone. It's unusual that someone can fool me twice - or even more. Well, most don't survive the first time anyway.~EXIT
+@142EXIT
 
 
 CHAIN
 IF~Global("PPSimeMerelWitness","Global",1)~ THEN SimeJ SeenMerel1
-~Is this a curse on me and my family? Each member I find dies right before my eyes.~
+@143
 DO~SetGlobal("PPSimeMerelWitness","Global",2)~
 END
-IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~I don't believe in such a curse. I'm sure we will find your father alive.~ + SeenMerel3
-IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY~I don't believe in such a curse. Your father is proof for that.~ + SeenMerel2
-IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY~If such a curse exists we should avoid to find your father.~+ SeenMerel4
-++~I don't believe in curses and I don't believe in destiny.~ + SeenMerel3
+IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY@144 + SeenMerel3
+IF~OR(3)!Global("TalkedToKamuza","GLOBAL",0)!Global("FreedKamuzu","GLOBAL",0)Global("PPKamSime","GLOBAL",1)~THEN REPLY@145 + SeenMerel2
+IF~Global("PPKamSime","GLOBAL",0)~THEN REPLY@146+ SeenMerel4
+++@147 + SeenMerel3
 
 CHAIN
 IF~~THEN SimeJ SeenMerel3
-~Neither do I. ~ EXTERN SimeJ SeenMerel2
+@148 EXTERN SimeJ SeenMerel2
 
 CHAIN
 IF~~THEN SimeJ SeenMerel2
-~This is just too much loss in such a short time. I feel like pushed to the limit, <CHARNAME>. I'm sorry, I know you have more than enough with your own problems.~
-=~There is no such curse. Just a series of bad coincidence. We will break this chain but we won't do it by standing here much longer.~EXIT
+@149
+=@150EXIT
 
 CHAIN
 IF~~THEN SimeJ SeenMerel4
-~Do not listen to my reasoning, it's nonsense. ~ EXTERN SimeJ SeenMerel2
+@151 EXTERN SimeJ SeenMerel2
 
 CHAIN
 IF~Global("PPSimeEggChange","Global",1)~THEN SimeJ Eggchange1
-~<CHARNAME>, I can sneak into the egg chamber and do the exchange without anyone noticing. Trust your shadow thief in this.~
+@152
 DO~SetGlobal("PPSimeEggChange","Global",2)~
 END
-++~I won't risk your life here. Thanks, but I'd rather do this myself.~+ Eggchange2
-IF~!Name("ppsime",Player2) Class(Player2,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER2> is a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
-IF~!Name("ppsime",Player3) Class(Player3,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER3> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
-IF~!Name("ppsime",Player4) Class(Player4,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER4> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
-IF~!Name("ppsime",Player5) Class(Player5,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER5> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
-IF~!Name("ppsime",Player6) Class(Player6,THIEF_ALL)~THEN REPLY~No, thanks, <PLAYER6> is  a better thief for this task. Don't sulk over it, Sime.~ + Eggchange2
-IF~PartyHasItem("misc9u")~THEN REPLY~Great idea, I want you to take the real eggs and place Phaere's fake inside.~ + EggchangeP
-IF~PartyHasItem("misc9v")~THEN REPLY~Great idea, I want you to take the real eggs and place Solaufein's fake inside.~ + EggchangeS
-IF~PartyHasItem("lk#xeggs")~THEN REPLY~Great idea, I want you to take the real eggs and place Xulaye's fake inside.~ + EggchangeX
+++@153+ Eggchange2
+IF~!Name("ppsime",Player2) Class(Player2,THIEF_ALL)~THEN REPLY@154 + Eggchange2
+IF~!Name("ppsime",Player3) Class(Player3,THIEF_ALL)~THEN REPLY@155 + Eggchange2
+IF~!Name("ppsime",Player4) Class(Player4,THIEF_ALL)~THEN REPLY@156 + Eggchange2
+IF~!Name("ppsime",Player5) Class(Player5,THIEF_ALL)~THEN REPLY@157 + Eggchange2
+IF~!Name("ppsime",Player6) Class(Player6,THIEF_ALL)~THEN REPLY@158 + Eggchange2
+IF~PartyHasItem("misc9u")~THEN REPLY@159 + EggchangeP
+IF~PartyHasItem("misc9v")~THEN REPLY@160 + EggchangeS
+IF~PartyHasItem("lk#xeggs")~THEN REPLY@161 + EggchangeX
 
 CHAIN
 IF~~THEN SimeJ Eggchange2
-~I couldn't care less.~EXIT
+@162EXIT
 
 CHAIN
 IF~~THEN SimeJ EggchangeP
-~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsu")~EXIT
+@163DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsu")~EXIT
 
 CHAIN
 IF~~THEN SimeJ EggchangeS
-~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsv")~EXIT
+@163DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsv")~EXIT
 
 CHAIN
 IF~~THEN SimeJ EggchangeX
-~No problem, you just stay here and wait.~DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsx")~EXIT
+@163DO~StartCutSceneMode() Wait(1) StartCutScene("PP_Eggsx")~EXIT
 
 CHAIN
 IF~Global("PPSimeFamily","Global",7)~THEN SimeJ Retire1
-~<CHARNAME>, what will you do after all this Bhaal mess, do you have some idea already?~
+@164
 DO~SetGlobal("PPSimeFamily","Global",8)~
 END
-++~I'm supposed to be Bhaal then myself or do you doubt that?~ + Retire2
-++~Most likely I go back to Candlekeep. It still is the only home I ever had.~ + Retire3
-IF~OR(2) Race(Player1,ELF)Race(Player1,HALF_ELF)~THEN REPLY~I had thought of settling down at Suldanessalar. They can hardly deny me that after I saved them.~ + Retire3
-IF~!Race(Player1,ELF)!Race(Player1,HALF_ELF)~THEN REPLY~I had thought of settling down at Suldanessalar. They can hardly deny me that after I saved them.~ + Retire7
-++~See more of the Realms, I suppose. We've been some places already but even more are yet to be discovered.~ + Retire4
+++@165 + Retire2
+++@166 + Retire3
+IF~OR(2) Race(Player1,ELF)Race(Player1,HALF_ELF)~THEN REPLY@167 + Retire3
+IF~!Race(Player1,ELF)!Race(Player1,HALF_ELF)~THEN REPLY@167 + Retire7
+++@168 + Retire4
 
 CHAIN
 IF~~THEN SimeJ Retire2
-~How could I forget, poor incompetent mortal that I am. I was just considering my own humble options, godhood not included.~ EXIT
+@169 EXIT
 
 CHAIN
 IF~~THEN SimeJ Retire3
-~Settling down sounds reasonable.~
-=~Maybe not immediately but in the long run that's what I may do as well.~
+@170
+=@171
 END
-++~Do you have a place in mind where you wouuld want to live or will it be Athkatla?~+ Retire6
-++~I could imagine that some of us might stay together for more adventures. A thief and good companion like you would always be welcome.~+ Retire5
+++@172+ Retire6
+++@173+ Retire5
 
 CHAIN
 IF~~THEN SimeJ Retire4
-~The idea is alluring, at least while still being young.~
-=~In the long run it may be good to have some place to settle down.~
+@174
+=@175
 END
-++~I could imagine that some of us might stay together for more adventures. A thief and good companion like you would always be welcome.~+ Retire5
-++~Do you have a place in mind where you wouuld want to live or will it be Athkatla?~+ Retire6
+++@173+ Retire5
+++@172+ Retire6
 
 CHAIN
 IF~~THEN SimeJ Retire5
-~If that was an invitation, I accept it.~
-=~At least for a while.~EXTERN SimeJ Retire6
+@176
+=@177EXTERN SimeJ Retire6
 
 CHAIN
 IF~~THEN SimeJ Retire6
-~Athkatla or city life isn't what I have in mind. Lately I was often thinking about the life my mother had chosen. The skills I developped while trvelling with you are not unlike those that a ranger protecting a village or land requires as well.~
-=~A place like Imnesvale that's close enough to Trademeet or Athkatla while still being rural enough for my liking is not bad.~
-=~But those are just considerations. In fact, I haven't made a decision yet.~EXIT
+@178
+=@179
+=@180EXIT
 
 CHAIN
 IF~~THEN SimeJ Retire7
-~I wouldn't think they admit a <PRO_RACE> regardless of your merits.~ EXTERN SimeJ Retire3
+@181 EXTERN SimeJ Retire3

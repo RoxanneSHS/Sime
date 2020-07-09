@@ -26,8 +26,8 @@ Global("PPSimeSanikSave","Global",5)
 THEN
 RESPONSE #100
 SetGlobal("PPSimeSanikSave","Global",6)
-EraseJournalEntry(@003)
-EraseJournalEntry(@006)
+EraseJournalEntry(@6003)
+EraseJournalEntry(@6006)
 END
 
 IF

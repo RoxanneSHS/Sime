@@ -4,7 +4,7 @@ HPLT(Myself,65)
 THEN
 RESPONSE #100
 SetGlobal("PPDeshSime","Global",2)
-DisplayStringWait(Myself,@009)
+DisplayStringWait(Myself,@6009)
 SmallWait(4)
 ReallyForceSpell(Myself,DRYAD_TELEPORT)
 END
@@ -18,6 +18,6 @@ GlobalLT("AsylumPlot","GLOBAL",12)
 THEN
 RESPONSE #100
 SetGlobal("PPDeshSime","Global",1)
-DisplayStringWait(Myself,@010)
+DisplayStringWait(Myself,@6010)
 Enemy()
 END

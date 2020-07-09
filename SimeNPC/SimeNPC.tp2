@@ -1,10 +1,10 @@
 BACKUP ~SimeNPC/backup~
 AUTHOR ~Roxanne - https://baldursextendedworld.com/Tamoko/ or roxanne@baldursextendedworld.com~
 
-VERSION ~v0.2~
+VERSION ~v0.3~
 AUTO_TRA ~SimeNPC/Tra/%s~
 
-LANGUAGE ~English~ ~english~ ~SimeNPC/Tra/Setup-Sime.tra~
+LANGUAGE ~English~ ~english~ ~SimeNPC/Tra/english/Setup-Sime.tra~
 
 BEGIN ~Sime NPC~
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @002
@@ -93,12 +93,12 @@ COPY ~SimeNPC/Misc/PP_sime.2da~ ~override/PPsime.2da~ REPLACE 82760 @011
 STRING_SET 53882 @008
 STRING_SET 53893 @007
 STRING_SET 54134 @007
-STRING_SET 23530 @006
+STRING_SET 23530 @6006
 
 ACTION_IF GAME_IS ~eet~ BEGIN
 STRING_SET 239808 @012
 END
 
-ADD_JOURNAL EXISTING TITLE (#74336) @003 @006 USING ~SimeNPC/Tra/Setup-Sime.tra~
+ADD_JOURNAL EXISTING TITLE (#74336) @6003 @6006 USING ~SimeNPC/Tra/%LANGUAGE%/Setup-Sime.tra~
 
 
