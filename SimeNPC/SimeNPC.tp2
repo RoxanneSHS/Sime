@@ -1,7 +1,7 @@
 BACKUP ~SimeNPC/backup~
 AUTHOR ~Roxanne - https://baldursextendedworld.com/Tamoko/ or roxanne@baldursextendedworld.com~
 
-VERSION ~v0.4~
+VERSION ~v0.5~
 AUTO_TRA ~SimeNPC/Tra/%s~
 
 LANGUAGE ~English~ ~english~ ~SimeNPC/Tra/english/Setup-Sime.tra~
@@ -102,4 +102,10 @@ END
 
 ADD_JOURNAL EXISTING TITLE (#74336) @6003 @6006 USING ~SimeNPC/Tra/%LANGUAGE%/Setup-Sime.tra~
 
-
+ACTION_IF FILE_EXISTS_IN_GAME ~nsgosph2.bcs~ THEN BEGIN
+COPY_EXISTING ~nsgosph2.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY       ~nsgosph3~
+                                ~Cut41B~
+  END
+END
