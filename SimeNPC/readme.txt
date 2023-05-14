@@ -16,6 +16,6 @@ The NPC comes with her own amount of smaller quests around her missing family me
 
 Gameplay note - If you kick her out prior to entering the asylum, she will revert to her vanilla guide role in Brynnlaw but not join you again. In later parts of the game you may sent her to a place to wait for you.
 
-Compatibility - Install Sime after Alternatives, Ding0's quest pack and Xulaye so that the mod can recognise their presence and provide for seamless play.
+Compatibility - Install Sime after Alternatives, Ding0's quest pack, Saerileth and Xulaye so that the mod can recognise their presence and provide for seamless play.
 
 

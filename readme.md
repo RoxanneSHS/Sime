@@ -24,7 +24,7 @@ Sime will save Sanik's life from Lady Galvena's assassin if she is in the party 
 
 The NPC comes with her own amount of smaller quests around her missing family members and some thief quests. Sime's egg theft is compatible with the Xulaye mod.
 
-Compatibility - Install Sime after Alternatives, Ding0's quest pack and Xulaye so that the mod can recognise their presence and provide for seamless play.
+Compatibility - Install Sime after Alternatives, Ding0's quest pack, Saerileth and Xulaye so that the mod can recognise their presence and provide for seamless play.
 
 (Note - this mod is not related to the NPC that was part of the Tortured Sould mod for BGT.)
 <br>
