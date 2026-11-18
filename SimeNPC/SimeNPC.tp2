@@ -6,6 +6,7 @@ AUTO_TRA ~SimeNPC/Tra/%s~
 
 LANGUAGE ~English~ ~english~ ~SimeNPC/Tra/english/Setup-Sime.tra~
 LANGUAGE ~Russian (by yota13 + p_zombie)~ ~russian~ ~SimeNPC/Tra/russian/Setup-Sime.tra~
+LANGUAGE ~Schinese~ ~schinese~ ~SimeNPC/Tra/schinese/Setup-Sime.tra~
 
 BEGIN ~Sime NPC~
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @002
